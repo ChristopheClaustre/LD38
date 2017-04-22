@@ -53,7 +53,7 @@ public class City : MonoBehaviour
     /********  PRIVATE          ************************/
 
     private List<Building> m_buildings;
-    private double m_population;
+    private double m_population = 0;
 
     /***************************************************
 	 ***  METHODS               ************************
