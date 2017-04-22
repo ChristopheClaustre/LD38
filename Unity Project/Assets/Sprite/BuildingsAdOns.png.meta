@@ -1,0 +1,388 @@
+fileFormatVersion: 2
+guid: 9b250865d3a08c841b86ab9ba5b3a11e
+timeCreated: 1492885806
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Lvl_Dark_Day_0
+    21300002: Lvl_Dark_Day_1
+    21300004: Lvl_Dark_Day_2
+    21300006: Lvl_Light_Day_0
+    21300008: Lvl_Dark_Night_0
+    21300010: Lvl_Dark_Night_1
+    21300012: Lvl_Dark_Night_2
+    21300014: Lvl_Light_Night_0
+    21300016: Lvl_Light_Night_1
+    21300018: Lvl_Light_Night_2
+    21300020: Lvl_Light_Day_1
+    21300022: Lvl_Light_Day_2
+    21300024: Lvl_Dark_Day_Balc
+    21300026: Lvl_Light_Day_Balc
+    21300028: Lvl_Light_Night_Balc
+    21300030: Lvl_Dark_Night_Balc
+    21300032: Lvl_Dark_Day_Plants
+    21300034: Lvl_Dark_Night_Plants
+    21300036: Lvl_Light_Day_Plants
+    21300038: Lvl_Light_Night_Plants
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: tvOS
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Lvl_Dark_Day_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 17
+        width: 6
+        height: 3
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lvl_Dark_Day_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 17
+        width: 6
+        height: 3
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lvl_Dark_Day_2
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 17
+        width: 6
+        height: 3
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lvl_Light_Day_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 17
+        width: 6
+        height: 3
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lvl_Dark_Night_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 13
+        width: 6
+        height: 3
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lvl_Dark_Night_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 13
+        width: 6
+        height: 3
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lvl_Dark_Night_2
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 13
+        width: 6
+        height: 3
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lvl_Light_Night_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 13
+        width: 6
+        height: 3
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lvl_Light_Night_1
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 13
+        width: 6
+        height: 3
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lvl_Light_Night_2
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 13
+        width: 6
+        height: 3
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lvl_Light_Day_1
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 17
+        width: 6
+        height: 3
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lvl_Light_Day_2
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 17
+        width: 6
+        height: 3
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lvl_Dark_Day_Balc
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 9
+        width: 7
+        height: 3
+      alignment: 9
+      pivot: {x: 0.425, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lvl_Light_Day_Balc
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 9
+        width: 7
+        height: 3
+      alignment: 9
+      pivot: {x: 0.425, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lvl_Light_Night_Balc
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 5
+        width: 7
+        height: 3
+      alignment: 9
+      pivot: {x: 0.425, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lvl_Dark_Night_Balc
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 5
+        width: 7
+        height: 3
+      alignment: 9
+      pivot: {x: 0.425, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lvl_Dark_Day_Plants
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 7
+        width: 9
+        height: 5
+      alignment: 9
+      pivot: {x: 0.45, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lvl_Dark_Night_Plants
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1
+        width: 9
+        height: 5
+      alignment: 9
+      pivot: {x: 0.45, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lvl_Light_Day_Plants
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 7
+        width: 9
+        height: 5
+      alignment: 9
+      pivot: {x: 0.45, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Lvl_Light_Night_Plants
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 1
+        width: 9
+        height: 5
+      alignment: 9
+      pivot: {x: 0.45, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
