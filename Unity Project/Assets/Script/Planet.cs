@@ -9,7 +9,6 @@ using System.Collections.Generic;
  *** THE CLASS              ************************
  ***************************************************/
 
-
 public class Planet : MonoBehaviour
 {
 
@@ -29,13 +28,13 @@ public class Planet : MonoBehaviour
 
     /********  PUBLIC           ************************/
 
-    public List<City> cities;
-    public int water;
-    public int coal;
-    public int energy;
-    public int pollution;
-    public int time;
-    public int timeUnit;
+    public List<City> mCities;
+    public int mWater;
+    public int mCoal;
+    public int mEnergy;
+    public int mPollution;
+    public int mTime;
+    public int mTimeUnit;
 
     /********  PROTECTED        ************************/
 
@@ -60,7 +59,8 @@ public class Planet : MonoBehaviour
     // Use this for initialization
     public void Start()
     {
-
+        // get all the cities
+        mCities.AddRange(GetComponentsInChildren<City>());
     }
 
     // Update is called once per frame
@@ -73,18 +73,22 @@ public class Planet : MonoBehaviour
     {
 
     }
+
     public void updateEau(double deltaTime)
     {
 
     }
+
     public void updateCharbon(double deltaTime)
     {
 
     }
+
     public int getPopulation()
     {
         return 0;
     }
+
     public float getVitesseRotation()
     {
         return 0;
