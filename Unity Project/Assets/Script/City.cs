@@ -27,9 +27,6 @@ public class City : MonoBehaviour
 	 ***************************************************/
 
     /********  PUBLIC           ************************/
-    public Camera CloseViewCamera;
-    public List<Building> buildings;
-    public int population;
 
     /********  PROTECTED        ************************/
 
@@ -41,9 +38,22 @@ public class City : MonoBehaviour
 
     /********  PUBLIC           ************************/
 
+    public Camera m_closeViewCamera;
+
+    public double A_population
+    {
+        get
+        {
+            return m_population;
+        }
+    }
+
     /********  PROTECTED        ************************/
 
     /********  PRIVATE          ************************/
+
+    private List<Building> m_buildings;
+    private double m_population;
 
     /***************************************************
 	 ***  METHODS               ************************
@@ -62,31 +72,48 @@ public class City : MonoBehaviour
     {
 
     }
-    public int getProductionPollution(double deltaTime)
+
+    public double getCoalConsumption()
+    {
+        return 1;
+    }
+
+    public double getWaterConsumption()
+    {
+        return 1;
+    }
+
+    public double getMoneyProduction()
+    {
+        return 1;
+    }
+
+    public double getEnergyConsumption()
+    {
+        return 1;
+    }
+
+    public double getEnergyProduction()
+    {
+        return 0.5;
+    }
+
+    public double getPollutionProduction()
+    {
+        return 1;
+    }
+
+    public double getWindStrength()
     {
         return 0;
     }
-    public int getProductionArgent(double deltaTime)
+
+    public double getSunlight()
     {
         return 0;
     }
-    public int getConsomationEau(double deltaTime)
-    {
-        return 0;
-    }
-    public int getConsomationEnergie(double deltaTime)
-    {
-        return 0;
-    }
-    public int getVent()
-    {
-        return 0;
-    }
-    public int getEnsoleillement()
-    {
-        return 0;
-    }
-    public float getSatisfaction()
+
+    public double getSatisfaction()
     {
         return 0;
     }
