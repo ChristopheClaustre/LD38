@@ -28,7 +28,8 @@ public class Planet : MonoBehaviour
 	 ***************************************************/
 
     /********  PUBLIC           ************************/
-    public City[] cities;
+
+    public List<City> cities;
     public int water;
     public int coal;
     public int energy;
@@ -82,11 +83,11 @@ public class Planet : MonoBehaviour
     }
     public int getPopulation()
     {
-
+        return 0;
     }
     public float getVitesseRotation()
     {
-
+        return 0;
     }
 
     /********  PROTECTED        ************************/

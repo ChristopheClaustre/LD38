@@ -17,9 +17,11 @@ public class Building : MonoBehaviour
 	 ***************************************************/
 
     /********  PUBLIC           ************************/
+
     public int consomationEnergie;
     public int consomationCharbon;
     public int productionPollution;
+
     /********  PROTECTED        ************************/
 
     /********  PRIVATE          ************************/

@@ -27,8 +27,8 @@ public class City : MonoBehaviour
 	 ***************************************************/
 
     /********  PUBLIC           ************************/
-    public Camera camera;
-    public Building[] buildings;
+    public Camera CloseViewCamera;
+    public List<Building> buildings;
     public int population;
 
     /********  PROTECTED        ************************/
@@ -64,31 +64,31 @@ public class City : MonoBehaviour
     }
     public int getProductionPollution(double deltaTime)
     {
-
+        return 0;
     }
     public int getProductionArgent(double deltaTime)
     {
-
+        return 0;
     }
     public int getConsomationEau(double deltaTime)
     {
-
+        return 0;
     }
     public int getConsomationEnergie(double deltaTime)
     {
-
+        return 0;
     }
     public int getVent()
     {
-
+        return 0;
     }
     public int getEnsoleillement()
     {
-
+        return 0;
     }
     public float getSatisfaction()
     {
-
+        return 0;
     }
 
     /********  PROTECTED        ************************/
