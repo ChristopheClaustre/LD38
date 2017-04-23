@@ -62,7 +62,6 @@ public class Cloud : MonoBehaviour
         m_rainedQuantity = Random.Range((int) Config.m_limitRainedQuantity.x, (int) Config.m_limitRainedQuantity.y);
         
         // scaling function of rainedQuantity
-        m_pivot.transform.localScale *= m_rainedQuantity / 1000.0f;
         m_pivot.transform.rotation = Quaternion.Euler(0, 0, m_beginningOrientation);
     }
 
