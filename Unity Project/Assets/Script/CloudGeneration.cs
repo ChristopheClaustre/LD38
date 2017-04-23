@@ -8,7 +8,8 @@ using System.Collections;
  *** THE CLASS              ************************
  ***************************************************/
 
-public class Cloud : MonoBehaviour
+public class CloudGeneration :
+    MonoBehaviour
 {
     /***************************************************
 	 ***  UNITY GUI PROPERTY    ************************
@@ -16,8 +17,10 @@ public class Cloud : MonoBehaviour
 
     /********  PUBLIC           ************************/
 
-    public GameObject m_pivot;
+    public Vector2 m_limitTimer = new Vector2(0.2f, 0.5f);
 
+    public GameObject m_prefabCloud;
+    
     /********  PROTECTED        ************************/
 
     /********  PRIVATE          ************************/
@@ -38,45 +41,32 @@ public class Cloud : MonoBehaviour
 
     /********  PUBLIC           ************************/
 
-    public float m_beginningOrientation = 24;
-    public float m_velocityCoeff = 0.2f;
-    public double m_TTL = 0;
-    public int m_rainedQuantity = 100;
-
     /********  PROTECTED        ************************/
 
     /********  PRIVATE          ************************/
+
+    private double m_timerCloud = 0;
 
     /***************************************************
 	 ***  METHODS               ************************
 	 ***************************************************/
 
     /********  PUBLIC           ************************/
+
     // Use this for initialization
     public void Start()
     {
-        // generation
-        m_beginningOrientation = Random.Range(0, 360);
-        m_velocityCoeff = Random.Range(Config.m_limitVelocityCoeff.x, Config.m_limitVelocityCoeff.y);
-        m_TTL = Random.Range(Config.m_limitTTL.x, Config.m_limitTTL.y);
-        m_rainedQuantity = Random.Range((int) Config.m_limitRainedQuantity.x, (int) Config.m_limitRainedQuantity.y);
-
-        // set velocity cloud
-        GetComponent<Animator>().SetFloat("ArcVelocity", m_velocityCoeff / Config.m_timeUnit);
-        
-        m_pivot.transform.localScale *= m_rainedQuantity / 1000.0f;
-        m_pivot.transform.rotation = Quaternion.Euler(0, 0, m_beginningOrientation);
+        computeTimer();
     }
 
     // Update is called once per frame
     public void Update()
     {
-        m_TTL -= Config.m_deltaTime;
+        m_timerCloud -= Config.m_deltaTime;
 
-        if (m_TTL <= 0)
+        if (m_timerCloud <= 0)
         {
-            Planet.A_instance.rain(m_rainedQuantity);
-            Destroy(this.gameObject);
+            generate();
         }
     }
 
@@ -84,4 +74,14 @@ public class Cloud : MonoBehaviour
 
     /********  PRIVATE          ************************/
 
+    private void generate()
+    {
+        computeTimer();
+        Instantiate(m_prefabCloud);
+    }
+
+    private void computeTimer()
+    {
+        m_timerCloud = Random.Range(m_limitTimer.x, m_limitTimer.y);
+    }
 }

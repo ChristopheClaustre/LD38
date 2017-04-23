@@ -3,12 +3,14 @@
  ***************************************************/
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 /***************************************************
  *** THE CLASS              ************************
  ***************************************************/
 
-public class Cloud : MonoBehaviour
+public class CityUI :
+    MonoBehaviour
 {
     /***************************************************
 	 ***  UNITY GUI PROPERTY    ************************
@@ -16,7 +18,15 @@ public class Cloud : MonoBehaviour
 
     /********  PUBLIC           ************************/
 
-    public GameObject m_pivot;
+    // UI
+    public GameObject m_populationText;
+    public GameObject m_coalText;
+    public GameObject m_waterText;
+    public GameObject m_moneyText;
+    public GameObject m_energyText;
+    public GameObject m_pollutionText;
+
+    public GameObject m_cityGO;
 
     /********  PROTECTED        ************************/
 
@@ -38,11 +48,6 @@ public class Cloud : MonoBehaviour
 
     /********  PUBLIC           ************************/
 
-    public float m_beginningOrientation = 24;
-    public float m_velocityCoeff = 0.2f;
-    public double m_TTL = 0;
-    public int m_rainedQuantity = 100;
-
     /********  PROTECTED        ************************/
 
     /********  PRIVATE          ************************/
@@ -52,36 +57,32 @@ public class Cloud : MonoBehaviour
 	 ***************************************************/
 
     /********  PUBLIC           ************************/
+
     // Use this for initialization
     public void Start()
     {
-        // generation
-        m_beginningOrientation = Random.Range(0, 360);
-        m_velocityCoeff = Random.Range(Config.m_limitVelocityCoeff.x, Config.m_limitVelocityCoeff.y);
-        m_TTL = Random.Range(Config.m_limitTTL.x, Config.m_limitTTL.y);
-        m_rainedQuantity = Random.Range((int) Config.m_limitRainedQuantity.x, (int) Config.m_limitRainedQuantity.y);
-
-        // set velocity cloud
-        GetComponent<Animator>().SetFloat("ArcVelocity", m_velocityCoeff / Config.m_timeUnit);
-        
-        m_pivot.transform.localScale *= m_rainedQuantity / 1000.0f;
-        m_pivot.transform.rotation = Quaternion.Euler(0, 0, m_beginningOrientation);
+        updateUI();
     }
 
     // Update is called once per frame
     public void Update()
     {
-        m_TTL -= Config.m_deltaTime;
-
-        if (m_TTL <= 0)
-        {
-            Planet.A_instance.rain(m_rainedQuantity);
-            Destroy(this.gameObject);
-        }
+        updateUI();
     }
 
     /********  PROTECTED        ************************/
 
     /********  PRIVATE          ************************/
+
+    private void updateUI()
+    {
+        // update UI
+        m_populationText.GetComponent<Text>().text = "" + m_cityGO.GetComponent<City>().A_population;
+        m_coalText.GetComponent<Text>().text = "" + m_cityGO.GetComponent<City>().getCoalConsumption();
+        m_waterText.GetComponent<Text>().text = "" + m_cityGO.GetComponent<City>().getWaterConsumption();
+        m_moneyText.GetComponent<Text>().text = "" + m_cityGO.GetComponent<City>().getMoneyProduction();
+        m_energyText.GetComponent<Text>().text = "" + m_cityGO.GetComponent<City>().getEnergyProduction();
+        m_pollutionText.GetComponent<Text>().text = "" + m_cityGO.GetComponent<City>().getPollutionProduction();
+    }
 
 }

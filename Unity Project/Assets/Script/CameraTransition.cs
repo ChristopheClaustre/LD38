@@ -160,7 +160,7 @@ public class CameraTransition : MonoBehaviour
         targetTransform.transform.localScale = cameraCity.transform.localScale;
 
         Vector3 temp = targetTransform.transform.rotation.eulerAngles;
-        temp.z += (((animationTime / Planet.A_instance.A_timeUnit) * 360.0f)) % 360.0f ;
+        temp.z += (((animationTime / Config.m_timeUnit) * 360.0f)) % 360.0f ;
         targetTransform.transform.rotation = Quaternion.Euler(temp);
 
         startSizeAttribute = cameraMain.orthographicSize;

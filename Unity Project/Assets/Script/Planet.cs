@@ -27,13 +27,6 @@ public class Planet : MonoBehaviour
             return m_pollutionBonus;
         }
     }
-    public int A_timeUnit
-    {
-        get
-        {
-            return m_timeUnit;
-        }
-    }
     public static Planet A_instance
     {
         get
@@ -43,13 +36,6 @@ public class Planet : MonoBehaviour
                 m_instance = GameObject.FindObjectOfType<Planet>();
             }
             return m_instance;
-        }
-    }
-    public static double A_deltaTime
-    {
-        get
-        {
-            return m_deltaTime;
         }
     }
 
@@ -67,8 +53,6 @@ public class Planet : MonoBehaviour
     /********  PRIVATE          ************************/
 
     // constant
-    [SerializeField]
-    private int m_timeUnit = 60;
     [SerializeField]
     private int m_pollutionBonus = 10;
 
@@ -113,7 +97,9 @@ public class Planet : MonoBehaviour
     [SerializeField]
     private double m_time = 0;
 
-    private static double m_deltaTime;
+    // victory attribute
+    private double m_killRatio = 0;
+    private bool m_isAlreadyKillingCivilian = false;
 
     /***************************************************
 	 ***  METHODS               ************************
@@ -124,46 +110,40 @@ public class Planet : MonoBehaviour
     // Use this for initialization
     public void Start()
     {
-        // set velocity planet
-        GetComponent<Animator>().SetFloat("ArcVelocity", 1.0f / m_timeUnit);
-
         // get all the cities
         m_cities.AddRange(GetComponentsInChildren<City>());
 
-        // UI
-        m_populationText.GetComponent<Text>().text = "" + getPopulation();
-        m_coalText.GetComponent<Text>().text = "" + Math.Round(m_coal);
-        m_waterText.GetComponent<Text>().text = "" + Math.Round(m_water);
-        m_moneyText.GetComponent<Text>().text = "" + Math.Round(m_money);
-        m_energyText.GetComponent<Text>().text = "" + Math.Round(m_energy);
-        m_pollutionText.GetComponent<Text>().text = "" + Math.Round(m_pollution);
-        m_timeText.GetComponent<Text>().text = "" + Math.Floor(m_time);
+        Update();
     }
 
     // Update is called once per frame
     public void Update()
     {
-        m_deltaTime = Time.deltaTime / 60;
+        // set velocity planet
+        GetComponent<Animator>().SetFloat("ArcVelocity", 1.0f / Config.m_timeUnit);
 
+        // update ressources and UI
         m_populationText.GetComponent<Text>().text = "" + getPopulation();
 
-        updateCoal(m_deltaTime);
+        updateCoal(Config.m_deltaTime);
         m_coalText.GetComponent<Text>().text = "" + Math.Floor(m_coal);
 
-        updateWater(m_deltaTime);
+        updateWater(Config.m_deltaTime);
         m_waterText.GetComponent<Text>().text = "" + Math.Floor(m_water);
 
-        updateMoney(m_deltaTime);
+        updateMoney(Config.m_deltaTime);
         m_moneyText.GetComponent<Text>().text = "" + Math.Floor(m_money);
 
-        updateEnergy(m_deltaTime);
+        updateEnergy(Config.m_deltaTime);
         m_energyText.GetComponent<Text>().text = "" + Math.Floor(m_energy);
 
-        updatePollution(m_deltaTime);
+        updatePollution(Config.m_deltaTime);
         m_pollutionText.GetComponent<Text>().text = "" + Math.Floor(m_pollution);
 
-        m_time += m_deltaTime;
+        m_time += Config.m_deltaTime;
         m_timeText.GetComponent<Text>().text = "" + Math.Floor(m_time);
+
+        checkDefeatCondition();
     }
 
     public int getPopulation()
@@ -190,6 +170,47 @@ public class Planet : MonoBehaviour
     /********  PROTECTED        ************************/
 
     /********  PRIVATE          ************************/
+
+    private void checkDefeatCondition()
+    {
+        m_isAlreadyKillingCivilian = false;
+        if (m_water <= 0)
+        {
+            m_isAlreadyKillingCivilian = true;
+            m_killRatio += Config.m_deltaTime * Config.m_killingCoeff;
+            killEveryone();
+        }
+        if (m_pollution >= 100)
+        {
+            m_isAlreadyKillingCivilian = true;
+            m_killRatio += Config.m_deltaTime * Config.m_killingCoeff;
+            killEveryone();
+        }
+
+        if (!m_isAlreadyKillingCivilian)
+        {
+            m_killRatio = 0;
+        }
+
+        // victory
+        if (getPopulation() <= 0)
+        {
+            victory();
+        }
+    }
+
+    private void victory()
+    {
+        Debug.Log("************ Victory !!! ************");
+    }
+
+    public void killEveryone()
+    {
+        foreach (City l_City in m_cities)
+        {
+            l_City.killEveryone(m_killRatio);
+        }
+    }
 
     private void updateCoal(double p_deltaTime)
     {
@@ -227,16 +248,13 @@ public class Planet : MonoBehaviour
     private void updateEnergy(double p_deltaTime)
     {
         double l_consumption = 0;
-        double l_production = 0;
 
         foreach (City l_City in m_cities)
         {
             l_consumption += l_City.getEnergyProduction();
-            l_production  += l_City.getEnergyConsumption();
         }
 
         m_energy -= l_consumption * p_deltaTime;
-        m_energy += l_production * p_deltaTime;
     }
 
     private void updatePollution(double p_deltaTime)
