@@ -54,6 +54,12 @@ public class City : MonoBehaviour
 
     private List<Building> m_buildings;
     private double m_population = 0;
+    [SerializeField]
+    private double m_sunlight = 1;
+    [SerializeField]
+    private double m_coeffPositionSunlight = 1;
+    [SerializeField]
+    private double m_coeffCloudSunlight = 1;
 
     /***************************************************
 	 ***  METHODS               ************************
@@ -73,6 +79,71 @@ public class City : MonoBehaviour
 
     }
 
+    public void OnTriggerEnter2D(Collider2D p_other)
+    {
+        switch(p_other.gameObject.name)
+        {
+            case "CloudFirstHalf":
+                m_coeffCloudSunlight = 0.5;
+                break;
+            case "CloudMiddle":
+                m_coeffCloudSunlight = 0;
+                break;
+            case "CloudSecondHalf":
+                m_coeffCloudSunlight = 0.5;
+                break;
+            case "CloudOff":
+                m_coeffCloudSunlight = 1;
+                break;
+            case "LightZoneFirstHalf":
+                m_coeffPositionSunlight = 0.75;
+                break;
+            case "LightZoneMiddle":
+                m_coeffPositionSunlight = 1;
+                break;
+            case "LightZoneSecondHalf":
+                m_coeffPositionSunlight = 0.75;
+                break;
+            case "LightZoneOff":
+                m_coeffPositionSunlight = 0;
+                break;
+            default:
+                break;
+        }
+
+        m_sunlight = m_coeffPositionSunlight * m_coeffCloudSunlight;
+    }
+    /*
+    public void OnTriggerExit2D(Collider2D p_other)
+    {
+        switch (p_other.gameObject.name)
+        {
+            case "CloudFirstHalf":
+                // nothing
+                break;
+            case "CloudMiddle":
+                // nothing
+                break;
+            case "CloudSecondHalf":
+                m_coeffCloudSunlight = 1;
+                break;
+            case "LightZoneFirstHalf":
+                // nothing
+                break;
+            case "LightZoneMiddle":
+                // nothing
+                break;
+            case "LightZoneSecondHalf":
+                // nothing
+//                m_coeffPositionSunlight = 0;
+                break;
+            default:
+                break;
+        }
+
+        m_sunlight = m_coeffPositionSunlight * m_coeffCloudSunlight;
+    }
+    */
     public double getCoalConsumption()
     {
         return 1;

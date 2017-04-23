@@ -45,7 +45,7 @@ public class Planet : MonoBehaviour
             return m_instance;
         }
     }
-    public static double DeltaTime
+    public static double A_deltaTime
     {
         get
         {
@@ -54,6 +54,7 @@ public class Planet : MonoBehaviour
     }
 
     // UI
+    public GameObject m_populationText;
     public GameObject m_coalText;
     public GameObject m_waterText;
     public GameObject m_moneyText;
@@ -123,13 +124,14 @@ public class Planet : MonoBehaviour
     // Use this for initialization
     public void Start()
     {
-        // set veolocity planet
+        // set velocity planet
         GetComponent<Animator>().SetFloat("ArcVelocity", 1.0f / m_timeUnit);
 
         // get all the cities
         m_cities.AddRange(GetComponentsInChildren<City>());
 
         // UI
+        m_populationText.GetComponent<Text>().text = "" + getPopulation();
         m_coalText.GetComponent<Text>().text = "" + Math.Round(m_coal);
         m_waterText.GetComponent<Text>().text = "" + Math.Round(m_water);
         m_moneyText.GetComponent<Text>().text = "" + Math.Round(m_money);
@@ -142,6 +144,8 @@ public class Planet : MonoBehaviour
     public void Update()
     {
         m_deltaTime = Time.deltaTime / 60;
+
+        m_populationText.GetComponent<Text>().text = "" + getPopulation();
 
         updateCoal(m_deltaTime);
         m_coalText.GetComponent<Text>().text = "" + Math.Floor(m_coal);
@@ -173,9 +177,14 @@ public class Planet : MonoBehaviour
         return (int) Math.Floor(l_population);
     }
 
-    private void buySomething(int p_cost)
+    public void buySomething(int p_cost)
     {
         m_money -= p_cost;
+    }
+
+    public void rain(int p_rainingQuantity)
+    {
+        m_water += p_rainingQuantity;
     }
 
     /********  PROTECTED        ************************/
