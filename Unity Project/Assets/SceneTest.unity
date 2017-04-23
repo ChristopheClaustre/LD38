@@ -1334,7 +1334,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_timeUnit_GUI: 60
-  m_deltaTime_GUI: 0
   m_killingCoeff_GUI: 0
   m_limitTimerWind_GUI: {x: 0.1, y: 0.5}
   m_limitVelocityCoeff_GUI: {x: -0.5, y: 1}

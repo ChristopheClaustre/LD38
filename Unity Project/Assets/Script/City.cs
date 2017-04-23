@@ -75,8 +75,8 @@ public class City : MonoBehaviour
     [SerializeField]
     private double m_population = 0;
     private double m_sunlight = 1;
-    private double m_coeffPositionSunlight = 1;
-    private double m_coeffCloudSunlight = 1;
+    private double m_positionCoeff = 1;
+    private double m_cloudCoeff = 1;
     private e_WindStrenght m_windStrength;
 
     private double m_timerWind = 0;
@@ -114,34 +114,34 @@ public class City : MonoBehaviour
         switch(p_other.gameObject.name)
         {
             case "CloudFirstHalf":
-                m_coeffCloudSunlight = 0.5;
+                m_cloudCoeff = 0.5;
                 break;
             case "CloudMiddle":
-                m_coeffCloudSunlight = 0;
+                m_cloudCoeff = 0;
                 break;
             case "CloudSecondHalf":
-                m_coeffCloudSunlight = 0.5;
+                m_cloudCoeff = 0.5;
                 break;
             case "CloudOff":
-                m_coeffCloudSunlight = 1;
+                m_cloudCoeff = 1;
                 break;
             case "LightZoneFirstHalf":
-                m_coeffPositionSunlight = 0.75;
+                m_positionCoeff = 0.75;
                 break;
             case "LightZoneMiddle":
-                m_coeffPositionSunlight = 1;
+                m_positionCoeff = 1;
                 break;
             case "LightZoneSecondHalf":
-                m_coeffPositionSunlight = 0.75;
+                m_positionCoeff = 0.75;
                 break;
             case "LightZoneOff":
-                m_coeffPositionSunlight = 0;
+                m_positionCoeff = 0;
                 break;
             default:
                 break;
         }
 
-        m_sunlight = m_coeffPositionSunlight * m_coeffCloudSunlight;
+        m_sunlight = m_positionCoeff * m_cloudCoeff;
     }
 
     public double getCoalConsumption()
