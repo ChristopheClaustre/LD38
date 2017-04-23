@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: def99e12a26099d48a2271b580818073
+timeCreated: 1492965860
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: SteamyPixels
+  fontNames:
+  - SteamyPixels
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
