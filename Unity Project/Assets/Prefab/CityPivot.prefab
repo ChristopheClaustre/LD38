@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4609440603434864}
   - component: {fileID: 212222178457697624}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Sprite Building Lvls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4204115145769424}
   - component: {fileID: 114507253869475534}
   - component: {fileID: 61308961311368940}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: City
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4270382622167360}
   - component: {fileID: 212454066484106310}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Sprite Building (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4072174475831590}
   - component: {fileID: 212202420658343438}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Sprite Building (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 124770897830867190}
   - component: {fileID: 92094175219590366}
   - component: {fileID: 81150282005135318}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Close View Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4689488698799860}
   - component: {fileID: 212914385531239464}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Sprite City
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4612242776003180}
   - component: {fileID: 212455330344069704}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Sprite Building (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4506918639003936}
   - component: {fileID: 212191571528085656}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Sprite Building (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1610241685366416}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7431448, w: 0.6691307}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -444,7 +444,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0046076775, y: 0.03152384}

@@ -66,6 +66,7 @@ public class TriggerCameraTransition : MonoBehaviour {
 
     public void OnMouseDown()
     {
+        Debug.Log(m_camTransitionSc);
         if(m_camTransitionSc)
             m_camTransitionSc.ActiveTansitionMainToTarget(m_closeViewCamera);
     }
