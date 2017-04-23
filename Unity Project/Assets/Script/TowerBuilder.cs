@@ -83,29 +83,27 @@ using System.Collections.Generic;
     {
 		City city = gameObject.GetComponent<City>();
 		Transform parentPlace = gameObject.GetComponent<Transform>();
-		if ((city.A_population +10)> (existingLvls[0]+existingLvls[1]+existingLvls[2]+existingLvls[3]+existingLvls[4]+existingLvls[5]))
+		if ((city.A_population/100)> (existingLvls[0]+existingLvls[1]+existingLvls[2]+existingLvls[3]+existingLvls[4]+existingLvls[5]))
 		{
-			dice = Random.Range(0,6);
-			GameObject newLvl = Instantiate(prefab,parentPlace);
+			dice = Random.Range(0,30);
+			GameObject newLvl = Instantiate(prefab,parentPlace,false);
 			Transform newLvlTr = newLvl.GetComponent<Transform>();
 			SpriteRenderer newLvlR = newLvl.GetComponent<SpriteRenderer>();
-			Debug.Log(newLvlPos[dice].x);
-			Debug.Log(newLvlPos[dice].y);
-			newLvlTr.position = newLvlPos[dice];
-			if (( 2 == dice) || (dice == 4))
-			{
-				newLvlR.sprite = darkSprites[(dice)%5];
-			}
-			else
+			newLvlTr.Translate(newLvlPos[(dice)%6]);
+			if (( 1 == ((dice)%6)) || (((dice)%6) == 4))
 			{
 				newLvlR.sprite = lightSprites[(dice)%5];
 			}
-			if (( 0 == dice) || (dice == 5))
+			else
+			{
+				newLvlR.sprite = darkSprites[(dice)%5];
+			}
+			if (( 0 == ((dice)%6)) || (((dice)%6) == 5))
 			{
 				newLvlR.sortingOrder = 1;
 			}
-			newLvlPos[dice].y += 0.03f ;
-			existingLvls[dice] += 1;
+			newLvlPos[(dice)%6].y += 0.03f ;
+			existingLvls[(dice)%6] += 1;
 			
 		}
 	}
