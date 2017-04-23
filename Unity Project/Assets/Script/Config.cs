@@ -18,10 +18,9 @@ public class Config :
 
     /********  PUBLIC           ************************/
 
-    public int m_timeUnit_GUI;
-    public int m_deltaTime_GUI;
+    public int m_timeUnit_GUI = 0;
 
-    public double m_killingCoeff_GUI;
+    public double m_killingCoeff_GUI = 1;
 
     public Vector2 m_limitTimerWind_GUI = new Vector2(0.1f, 0.5f);
     public Vector2 m_limitVelocityCoeff_GUI = new Vector2(-0.5f, 1.0f);
@@ -63,9 +62,9 @@ public class Config :
     public static Vector2 m_limitTTL;
     public static Vector2 m_limitRainedQuantity;
 
-    public static List<double> m_satisfactionCoeff;
-    public static List<int> m_satisfactionThreshold;
-    public static List<double> m_windStrengthCoeff;
+    public static List<double> m_satisfactionCoeff = new List<double>();
+    public static List<int> m_satisfactionThreshold = new List<int>();
+    public static List<double> m_windStrengthCoeff = new List<double>();
 
     /********  PROTECTED        ************************/
 

@@ -174,7 +174,7 @@ public class City : MonoBehaviour
         double l_pollution = getPollutionProduction();
 
         int i = 0;
-        while (l_pollution >= Config.m_satisfactionThreshold[i])
+        while (l_pollution >= Config.m_satisfactionThreshold[i] && i+1 < Config.m_satisfactionCoeff.Count)
         {
             ++i;
         }

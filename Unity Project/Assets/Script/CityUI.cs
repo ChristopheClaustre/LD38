@@ -4,6 +4,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
 
 /***************************************************
  *** THE CLASS              ************************
@@ -77,7 +78,7 @@ public class CityUI :
     private void updateUI()
     {
         // update UI
-        m_populationText.GetComponent<Text>().text = "" + m_cityGO.GetComponent<City>().A_population;
+        m_populationText.GetComponent<Text>().text = "" + Math.Floor(m_cityGO.GetComponent<City>().A_population);
         m_coalText.GetComponent<Text>().text = "" + m_cityGO.GetComponent<City>().getCoalConsumption();
         m_waterText.GetComponent<Text>().text = "" + m_cityGO.GetComponent<City>().getWaterConsumption();
         m_moneyText.GetComponent<Text>().text = "" + m_cityGO.GetComponent<City>().getMoneyProduction();

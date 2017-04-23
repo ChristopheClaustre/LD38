@@ -60,10 +60,8 @@ public class Cloud : MonoBehaviour
         m_velocityCoeff = Random.Range(Config.m_limitVelocityCoeff.x, Config.m_limitVelocityCoeff.y);
         m_TTL = Random.Range(Config.m_limitTTL.x, Config.m_limitTTL.y);
         m_rainedQuantity = Random.Range((int) Config.m_limitRainedQuantity.x, (int) Config.m_limitRainedQuantity.y);
-
-        // set velocity cloud
-        GetComponent<Animator>().SetFloat("ArcVelocity", m_velocityCoeff / Config.m_timeUnit);
         
+        // scaling function of rainedQuantity
         m_pivot.transform.localScale *= m_rainedQuantity / 1000.0f;
         m_pivot.transform.rotation = Quaternion.Euler(0, 0, m_beginningOrientation);
     }
@@ -71,6 +69,10 @@ public class Cloud : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        // set velocity cloud
+        GetComponent<Animator>().SetFloat("ArcVelocity", m_velocityCoeff / Config.m_timeUnit);
+
+        // update TTL
         m_TTL -= Config.m_deltaTime;
 
         if (m_TTL <= 0)

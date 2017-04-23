@@ -522,7 +522,7 @@ GameObject:
   - component: {fileID: 270944930}
   - component: {fileID: 270944929}
   m_Layer: 8
-  m_Name: Button (1)
+  m_Name: ButtonToCity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1283,7 +1283,6 @@ MonoBehaviour:
   m_energyText: {fileID: 966454066}
   m_pollutionText: {fileID: 1465194614}
   m_timeText: {fileID: 215101291}
-  m_timeUnit: 60
   m_pollutionBonus: 10
   m_cities: []
   m_coal: 10000
@@ -1334,13 +1333,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e039b9d42ad7c42910934f032479db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_unitTime_GUI: 0
+  m_timeUnit_GUI: 60
   m_deltaTime_GUI: 0
   m_killingCoeff_GUI: 0
   m_limitTimerWind_GUI: {x: 0.1, y: 0.5}
   m_limitVelocityCoeff_GUI: {x: -0.5, y: 1}
   m_limitTTL_GUI: {x: 0.2, y: 2}
   m_limitRainedQuantity_GUI: {x: 800, y: 1200}
+  m_satisfactionCoeff_GUI:
+  - 0.5
+  - 0.75
+  - 1
+  - 1.15
+  m_satisfactionThreshold_GUI: 140000000a0000000500000002000000
+  m_windStrengthCoeff_GUI:
+  - 0.25
+  - 0.75
+  - 1
+  - 2
 --- !u!1 &567509584
 GameObject:
   m_ObjectHideFlags: 0
@@ -7563,7 +7573,7 @@ GameObject:
   - component: {fileID: 1314120627}
   - component: {fileID: 1314120626}
   m_Layer: 8
-  m_Name: Button
+  m_Name: ButtonToWorld
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8366,7 +8376,7 @@ GameObject:
   - component: {fileID: 1696969636}
   m_Layer: 0
   m_Name: Transition Camera
-  m_TagString: Untagged
+  m_TagString: CameraTransition
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8452,12 +8462,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15ee1dac0b1360e4f999a1a990c674d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraMain: {fileID: 672369933}
-  cameraCity: {fileID: 1866690731}
-  cameraTarget: {fileID: 0}
-  animationTime: 2
-  buttonMainToTarget: {fileID: 270944929}
-  buttonTargetToMain: {fileID: 1314120626}
+  m_cameraMain: {fileID: 672369933}
+  m_cameraCity: {fileID: 0}
+  m_animationTime: 2
+  m_buttonMainToTarget: {fileID: 270944929}
+  m_buttonTargetToMain: {fileID: 1314120626}
 --- !u!1 &1735396681
 GameObject:
   m_ObjectHideFlags: 0
@@ -8658,27 +8667,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114507253869475534, guid: a8df8bc3854315849a777bd8446db696,
-        type: 2}
-      propertyPath: m_closeViewCamera
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114507253869475534, guid: a8df8bc3854315849a777bd8446db696,
-        type: 2}
-      propertyPath: m_baseProductionPopulation
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 114507253869475534, guid: a8df8bc3854315849a777bd8446db696,
-        type: 2}
-      propertyPath: m_population
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 114507253869475534, guid: a8df8bc3854315849a777bd8446db696,
-        type: 2}
-      propertyPath: truc
-      value: 
-      objectReference: {fileID: 21300000, guid: c01c3dc244475934fa55506153313192,
-        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a8df8bc3854315849a777bd8446db696, type: 2}
   m_IsPrefabParent: 0
