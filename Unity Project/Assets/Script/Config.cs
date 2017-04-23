@@ -18,7 +18,8 @@ public class Config :
 
     /********  PUBLIC           ************************/
 
-    public int m_timeUnit_GUI = 0;
+    public int m_timeUnit_GUI = 60;
+    public int m_baseProductionPopulation_GUI = 100;
 
     public double m_killingCoeff_GUI = 1;
 
@@ -53,6 +54,7 @@ public class Config :
     /********  PUBLIC           ************************/
 
     public static int m_timeUnit;
+    public static int m_baseProductionPopulation;
     public static double m_deltaTime;
 
     public static double m_killingCoeff;
@@ -87,7 +89,8 @@ public class Config :
     {
         m_timeUnit = m_timeUnit_GUI;
         m_deltaTime = Time.deltaTime / m_timeUnit;
-        m_killingCoeff = m_killingCoeff_GUI;
+        m_baseProductionPopulation = m_baseProductionPopulation_GUI;
+
         m_limitTimerWind = m_limitTimerWind_GUI;
         m_limitVelocityCoeff = m_limitVelocityCoeff_GUI;
         m_limitTTL = m_limitTTL_GUI;

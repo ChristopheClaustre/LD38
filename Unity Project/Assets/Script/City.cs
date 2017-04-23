@@ -48,8 +48,6 @@ public class City : MonoBehaviour
     /********  PUBLIC           ************************/
 
     public Camera m_closeViewCamera;
-
-    public static readonly int m_baseProductionPopulation = 100;
     
     public double A_population
     {
@@ -106,7 +104,7 @@ public class City : MonoBehaviour
         }
 
         // update population
-        m_population += m_baseProductionPopulation * getSatisfactionCoeff() * Config.m_deltaTime;
+        m_population += Config.m_baseProductionPopulation * getSatisfactionCoeff() * Config.m_deltaTime;
     }
 
     public void OnTriggerEnter2D(Collider2D p_other)
