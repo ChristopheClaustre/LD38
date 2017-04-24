@@ -2791,7 +2791,12 @@ Prefab:
     - target: {fileID: 114982661187671986, guid: 3eb39379b112c9d49b9a46ad81b5b757,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114982661187671986, guid: 3eb39379b112c9d49b9a46ad81b5b757,
+        type: 2}
+      propertyPath: m_tileNumber
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3eb39379b112c9d49b9a46ad81b5b757, type: 2}
