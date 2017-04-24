@@ -81,7 +81,7 @@ public class Building :
 
     /********  PUBLIC           ************************/
 
-    public Dictionary<Ressource, Production> A_production
+    public List<Production> A_production
     {
         get
         {
@@ -101,7 +101,7 @@ public class Building :
 
     /********  PRIVATE          ************************/
     
-    private Dictionary<Ressource, Production> m_production = new Dictionary<Ressource, Production>();
+    private List<Production> m_production = new List<Production>();
 
     /***************************************************
 	 ***  METHODS               ************************
@@ -119,12 +119,12 @@ public class Building :
     public void OnEnable()
     {
         m_production.Clear();
-
-        m_production.Add(Ressource.ePollution, m_pollution);
-        m_production.Add(Ressource.eCoal, m_coal);
-        m_production.Add(Ressource.eWater, m_water);
-        m_production.Add(Ressource.eMoney, m_money);
-        m_production.Add(Ressource.eEnergy, m_energy);
+        
+        m_production.Add(m_pollution);
+        m_production.Add(m_coal);
+        m_production.Add(m_water);
+        m_production.Add(m_money);
+        m_production.Add(m_energy);
     }
 
     // Update is called once per frame
@@ -137,7 +137,7 @@ public class Building :
     {
         foreach(var l_up in l_upgrade)
         {
-            Production l_prod = m_production[l_up.m_ressource];
+            Production l_prod = m_production[(int) l_up.m_ressource];
 
             if (! l_prod.m_change)
             {
@@ -149,7 +149,7 @@ public class Building :
             }
             l_prod.m_change = true;
 
-            m_production[l_up.m_ressource] = l_prod;
+            m_production[(int) l_up.m_ressource] = l_prod;
         }
     }
 
