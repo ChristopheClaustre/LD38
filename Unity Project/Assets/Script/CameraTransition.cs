@@ -47,11 +47,11 @@ public class CameraTransition : MonoBehaviour
     /********  PRIVATE          ************************/
     private float m_startTime;
     private Camera m_cameraTarget;
-    private GameObject m_startTransform;
-    private GameObject m_targetTransform;
+    private GameObject m_goStartTransform;
+    private GameObject m_goTargetTransform;
     private float m_startSizeAttribute;
     private float m_targetSizeAttribute;
-    private bool m_isOnTransition;
+    private bool m_isOnTransition = false;
     private bool m_isOnMain = true;
     private bool m_isOnTarget = false;
 
@@ -64,10 +64,8 @@ public class CameraTransition : MonoBehaviour
     // Use this for initialization
     public void Start()
     {
-        m_startTransform = new GameObject();
-        m_targetTransform = new GameObject();
-        //Button btnMainToTarget = m_buttonMainToTarget.GetComponent<Button>();
-        //btnMainToTarget.onClick.AddListener(ActiveTansitionMainToTarget(m_cameraCity));
+        m_goStartTransform = new GameObject("m_goStartTransform");
+        m_goTargetTransform = new GameObject("m_goTargetTransform");
         Button btnTargetToMain = m_buttonTargetToMain.GetComponent<Button>();
         btnTargetToMain.onClick.AddListener(ActiveTansitionTargetToMain);
     }
@@ -82,11 +80,15 @@ public class CameraTransition : MonoBehaviour
         {
             m_cameraMain.targetDisplay = 0;
             gameObject.GetComponent<Camera>().targetDisplay = 2;
+            gameObject.transform.position = m_goTargetTransform.transform.position;
+            gameObject.transform.rotation = m_goTargetTransform.transform.rotation;
         }
         else if (m_isOnTarget && m_cameraCity.GetComponent<Camera>().targetDisplay != 0)
         {
             m_cameraCity.targetDisplay = 0;
             gameObject.GetComponent<Camera>().targetDisplay = 2;
+            gameObject.transform.position = m_goTargetTransform.transform.position;
+            gameObject.transform.rotation = m_goTargetTransform.transform.rotation;
         }
     }
 
@@ -104,17 +106,18 @@ public class CameraTransition : MonoBehaviour
             m_isOnMain = false;
             m_isOnTarget = true;
         }
-        //Only append when player click again
-        else if (m_isOnTarget)
-        {
-            m_isOnTransition = false;
-        }
+        ////Only append when player click again
+        //else if (m_isOnTarget)
+        //{
+        //    m_isOnTransition = false;
+        //}
     }
 
     private void ActiveTansitionTargetToMain()
     {
         if (m_isOnTarget && !m_isOnTransition)
         {
+            m_cameraCity.gameObject.SetActive(false);
             m_cameraCity.targetDisplay = 1;
             gameObject.GetComponent<Camera>().targetDisplay = 0;
             startCameraTransitionTargetToMain();
@@ -122,26 +125,26 @@ public class CameraTransition : MonoBehaviour
             m_isOnTarget = false;
         }
         //Only append when player click again
-        else if (m_isOnMain)
-        {
-            m_isOnTransition = false;
-        }
+        //else if (m_isOnMain)
+        //{
+        //    m_isOnTransition = false;
+        //}
     }
 
     private void startCameraTransitionTargetToMain()
     {
         m_cameraTarget = m_cameraMain;
         m_startTime = Time.time;
-        m_startTransform.transform.position = m_cameraCity.transform.position;
-        m_startTransform.transform.rotation = m_cameraCity.transform.rotation;
-        m_startTransform.transform.localScale = m_cameraCity.transform.localScale;
+        m_goStartTransform.transform.position = m_cameraCity.transform.position;
+        m_goStartTransform.transform.rotation = m_cameraCity.transform.rotation;
+        m_goStartTransform.transform.localScale = m_cameraCity.transform.localScale;
 
-        m_targetTransform.transform.position = m_cameraMain.transform.position;
-        m_targetTransform.transform.rotation = m_cameraMain.transform.rotation;
-        m_targetTransform.transform.localScale = m_cameraMain.transform.localScale;
+        m_goTargetTransform.transform.position = m_cameraTarget.transform.position;
+        m_goTargetTransform.transform.rotation = m_cameraTarget.transform.rotation;
+        m_goTargetTransform.transform.localScale = m_cameraTarget.transform.localScale;
         
         m_startSizeAttribute = m_cameraCity.orthographicSize;
-        m_targetSizeAttribute = m_cameraMain.orthographicSize;
+        m_targetSizeAttribute = m_cameraTarget.orthographicSize;
         m_isOnTransition = true;
     }
 
@@ -149,21 +152,21 @@ public class CameraTransition : MonoBehaviour
     {
         m_cameraTarget = m_cameraCity;
         m_startTime = Time.time;
-        
-        m_startTransform.transform.position = m_cameraMain.transform.position;
-        m_startTransform.transform.rotation = m_cameraMain.transform.rotation;
-        m_startTransform.transform.localScale = m_cameraMain.transform.localScale;
 
-        m_targetTransform.transform.position = m_cameraCity.transform.position;
-        m_targetTransform.transform.rotation = m_cameraCity.transform.rotation;
-        m_targetTransform.transform.localScale = m_cameraCity.transform.localScale;
+        m_goStartTransform.transform.position = m_cameraMain.transform.position;
+        m_goStartTransform.transform.rotation = m_cameraMain.transform.rotation;
+        m_goStartTransform.transform.localScale = m_cameraMain.transform.localScale;
 
-        Vector3 temp = m_targetTransform.transform.rotation.eulerAngles;
+        m_goTargetTransform.transform.position = m_cameraTarget.transform.position;
+        m_goTargetTransform.transform.rotation = m_cameraTarget.transform.rotation;
+        m_goTargetTransform.transform.localScale = m_cameraTarget.transform.localScale;
+
+        Vector3 temp = m_goTargetTransform.transform.rotation.eulerAngles;
         temp.z += (((m_animationTime / Config.m_timeUnit) * 360.0f)) % 360.0f ;
-        m_targetTransform.transform.rotation = Quaternion.Euler(temp);
+        m_goTargetTransform.transform.rotation = Quaternion.Euler(temp);
 
         m_startSizeAttribute = m_cameraMain.orthographicSize;
-        m_targetSizeAttribute = m_cameraCity.orthographicSize;
+        m_targetSizeAttribute = m_cameraTarget.orthographicSize;
         m_isOnTransition = true;
     }
 
@@ -171,10 +174,10 @@ public class CameraTransition : MonoBehaviour
     {
         if (Time.time < m_startTime + m_animationTime)
         {
-            m_targetTransform.transform.position = m_cameraTarget.transform.position;
+            m_goTargetTransform.transform.position = m_cameraTarget.transform.position;
             float i = (Time.time - m_startTime) / m_animationTime;
-            gameObject.transform.position = Vector3.Lerp(m_startTransform.transform.position, m_targetTransform.transform.position, i);
-            gameObject.transform.rotation = Quaternion.Lerp(m_startTransform.transform.rotation, m_targetTransform.transform.rotation, i);
+            gameObject.transform.position = Vector3.Lerp(m_goStartTransform.transform.position, m_goTargetTransform.transform.position, i);
+            gameObject.transform.rotation = Quaternion.Lerp(m_goStartTransform.transform.rotation, m_goTargetTransform.transform.rotation, i);
             gameObject.GetComponent<Camera>().orthographicSize = Mathf.Lerp(m_startSizeAttribute, m_targetSizeAttribute, i);
         }
         else

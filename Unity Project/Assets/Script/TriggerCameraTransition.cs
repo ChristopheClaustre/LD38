@@ -39,6 +39,8 @@ public class TriggerCameraTransition : MonoBehaviour {
     /********  PUBLIC           ************************/
     private CameraTransition m_camTransitionSc;
     private Camera m_closeViewCamera;
+    private GameObject m_cityCameraCanvas;
+    private CityUI m_cityUIScript;
 
     /********  PROTECTED        ************************/
 
@@ -56,19 +58,24 @@ public class TriggerCameraTransition : MonoBehaviour {
     {
         m_camTransitionSc = GameObject.FindWithTag("CameraTransition").GetComponent<CameraTransition>();
         m_closeViewCamera = gameObject.transform.parent.gameObject.GetComponent<City>().m_closeViewCamera;
+        m_cityUIScript = GameObject.Find("City Camera Canvas").GetComponent<CityUI>();
     }
 
     // Update is called once per frame
     public void Update()
     {
-
+        
     }
 
     public void OnMouseDown()
     {
-        Debug.Log(m_camTransitionSc);
-        if(m_camTransitionSc)
+        if (m_camTransitionSc != null && m_closeViewCamera != null)
+        {
+            m_cityUIScript.A_cityGO = gameObject.transform.parent.gameObject;
+            m_closeViewCamera.gameObject.SetActive(true);
             m_camTransitionSc.ActiveTansitionMainToTarget(m_closeViewCamera);
+        }
+           
     }
 
     /********  PROTECTED        ************************/
