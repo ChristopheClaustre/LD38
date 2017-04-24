@@ -67,6 +67,11 @@ public class PlanetBuilder :
     // Use this for initialization
     public void Start()
     {
+        if (m_cityNumber + m_reliefNumber > m_tileNumber)
+        {
+            Debug.LogError("Error in planet building configuration : too much city and relief");
+        }
+
         // retrieve the cities names
         fillDictionary();
 

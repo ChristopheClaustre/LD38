@@ -274,7 +274,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1221197531179714}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.45, y: 0, z: 0}
+  m_LocalPosition: {x: -0.35, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4359865114762700}
@@ -450,7 +450,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.25}
+  m_Size: {x: 0.15, y: 0.25}
   m_EdgeRadius: 0
 --- !u!61 &61405256781694098
 BoxCollider2D:
@@ -464,7 +464,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.1, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -514,7 +514,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.1, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -555,11 +555,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76bacab7afd58bc4585bf2fe001d3a8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_pivot: {fileID: 1068673100589060}
+  m_pivotRotation: {fileID: 1068673100589060}
+  m_pivotDisparation: {fileID: 1273065126311900}
   m_beginningOrientation: 50
   m_velocityCoeff: 0.2
   m_TTL: 0
-  m_rainedQuantity: 100
+  m_waterQuantity: 100
+  m_ratioWaterTTL: 0
 --- !u!198 &198170322695049132
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -615,7 +617,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2107373861
+  randomSeed: 919277737
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3571,7 +3573,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1277475106
+  randomSeed: -477186623
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6527,7 +6529,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -501740160
+  randomSeed: -2116205009
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -9483,7 +9485,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1166520293
+  randomSeed: -1598363111
   InitialModule:
     serializedVersion: 3
     enabled: 1

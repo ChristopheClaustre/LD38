@@ -27,17 +27,35 @@ public class CityUI :
     public GameObject m_energyText;
     public GameObject m_pollutionText;
 
-    public GameObject m_cityGO;
-
     /********  PROTECTED        ************************/
 
     /********  PRIVATE          ************************/
+
+    [SerializeField]
+    private GameObject m_cityGO;
 
     /***************************************************
 	 ***  SUB-CLASSES           ************************
 	 ***************************************************/
 
     /********  PUBLIC           ************************/
+
+    public GameObject A_cityGO
+    {
+        get
+        {
+            return m_cityGO;
+        }
+
+        set
+        {
+            m_cityGO = value;
+            if (m_cityGO != null)
+            {
+                this.GetComponent<Canvas>().worldCamera = m_cityGO.GetComponentInChildren<Camera>();
+            }
+        }
+    }
 
     /********  PROTECTED        ************************/
 
@@ -62,6 +80,7 @@ public class CityUI :
     // Use this for initialization
     public void Start()
     {
+        A_cityGO = m_cityGO;
         updateUI();
     }
 
@@ -80,12 +99,12 @@ public class CityUI :
         if (m_cityGO != null)
         {
             // update UI
-            m_populationText.GetComponent<Text>().text = "" + Math.Floor(m_cityGO.GetComponent<City>().A_population);
-            m_coalText.GetComponent<Text>().text = "" + m_cityGO.GetComponent<City>().getCoalConsumption();
-            m_waterText.GetComponent<Text>().text = "" + m_cityGO.GetComponent<City>().getWaterConsumption();
-            m_moneyText.GetComponent<Text>().text = "" + m_cityGO.GetComponent<City>().getMoneyProduction();
-            m_energyText.GetComponent<Text>().text = "" + m_cityGO.GetComponent<City>().getEnergyProduction();
-            m_pollutionText.GetComponent<Text>().text = "" + m_cityGO.GetComponent<City>().getPollutionProduction();
+            m_populationText.GetComponent<Text>().text = "" + Math.Floor(m_cityGO.GetComponentInChildren<City>().A_population);
+            m_coalText.GetComponent<Text>().text = "" + m_cityGO.GetComponentInChildren<City>().getCoalConsumption();
+            m_waterText.GetComponent<Text>().text = "" + m_cityGO.GetComponentInChildren<City>().getWaterConsumption();
+            m_moneyText.GetComponent<Text>().text = "" + m_cityGO.GetComponentInChildren<City>().getMoneyProduction();
+            m_energyText.GetComponent<Text>().text = "" + m_cityGO.GetComponentInChildren<City>().getEnergyProduction();
+            m_pollutionText.GetComponent<Text>().text = "" + m_cityGO.GetComponentInChildren<City>().getPollutionProduction();
         }
     }
 

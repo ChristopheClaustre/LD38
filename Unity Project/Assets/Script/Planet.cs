@@ -162,7 +162,7 @@ public class Planet : MonoBehaviour
         m_money -= p_cost;
     }
 
-    public void rain(int p_rainingQuantity)
+    public void rain(double p_rainingQuantity)
     {
         m_water += p_rainingQuantity;
     }
