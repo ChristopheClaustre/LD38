@@ -38,15 +38,17 @@ public class CameraTransition : MonoBehaviour
 
     /********  PUBLIC           ************************/
     public Camera m_cameraMain;
-    public Camera m_cameraCity;
     public float m_animationTime;
     public Button m_buttonMainToTarget;
     public Button m_buttonTargetToMain;
+    public bool m_isOnCity;
+    public GameObject m_cityCameraCanvas;
     /********  PROTECTED        ************************/
 
     /********  PRIVATE          ************************/
     private float m_startTime;
     private Camera m_cameraTarget;
+    private Camera m_cameraCity;
     private GameObject m_goStartTransform;
     private GameObject m_goTargetTransform;
     private float m_startSizeAttribute;
@@ -90,6 +92,7 @@ public class CameraTransition : MonoBehaviour
             gameObject.transform.position = m_goTargetTransform.transform.position;
             gameObject.transform.rotation = m_goTargetTransform.transform.rotation;
         }
+        m_isOnCity = m_isOnTarget;
     }
 
     /********  PROTECTED        ************************/
@@ -118,6 +121,7 @@ public class CameraTransition : MonoBehaviour
         if (m_isOnTarget && !m_isOnTransition)
         {
             m_cameraCity.gameObject.SetActive(false);
+            m_cityCameraCanvas.GetComponent<GraphicRaycaster>().enabled = false;
             m_cameraCity.targetDisplay = 1;
             gameObject.GetComponent<Camera>().targetDisplay = 0;
             startCameraTransitionTargetToMain();
