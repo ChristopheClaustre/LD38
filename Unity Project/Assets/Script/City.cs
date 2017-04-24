@@ -91,15 +91,7 @@ public class City : MonoBehaviour
     {
         get
         {
-            List<Building> l_buildings = new List<Building>();
-
-            foreach (var l_go in m_buildingsGO)
-            {
-                l_buildings.Add(getActiveBuilding(l_go));
-            }
-            m_buildingsDebug = l_buildings;
-
-            return l_buildings;
+            return m_buildingsDebug;
         }
     }
 
@@ -154,6 +146,9 @@ public class City : MonoBehaviour
         {
             m_population += Planet.A_instance.A_birthRatio * getSatisfactionCoeff();
         }
+
+        // get the buildings
+        getActiveBuildings();
     }
 
     public void OnTriggerEnter2D(Collider2D p_other)
@@ -285,16 +280,14 @@ public class City : MonoBehaviour
 
     /********  PRIVATE          ************************/
 
-    private List<Building> getActiveBuildings()
+    private void getActiveBuildings()
     {
-        List<Building> l_buildings = new List<Building>();
+        m_buildingsDebug = new List<Building>();
 
         foreach (var l_go in m_buildingsGO)
         {
-            l_buildings.Add(getActiveBuilding(l_go));
+            m_buildingsDebug.Add(getActiveBuilding(l_go));
         }
-
-        return l_buildings;
     }
 
     private static Building getActiveBuilding(GameObject p_go)
