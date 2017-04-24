@@ -101,7 +101,7 @@ public class Building :
 
     /********  PRIVATE          ************************/
     
-    private List<Production> m_production = new List<Production>();
+    public List<Production> m_production = new List<Production>();
 
     /***************************************************
 	 ***  METHODS               ************************

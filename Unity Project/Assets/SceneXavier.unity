@@ -209,11 +209,11 @@ Prefab:
         type: 2}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 1726855589}
+      objectReference: {fileID: 1410698854}
     - target: {fileID: 224690129618994494, guid: 6d814ccf42373f54d87fcc5ecb48d470,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0.5330668
+      value: 0.5330667
       objectReference: {fileID: 0}
     - target: {fileID: 224690129618994494, guid: 6d814ccf42373f54d87fcc5ecb48d470,
         type: 2}
@@ -224,6 +224,11 @@ Prefab:
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 0.9999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 114985721377330302, guid: 6d814ccf42373f54d87fcc5ecb48d470,
+        type: 2}
+      propertyPath: m_cityGO
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 224724547490229134, guid: 6d814ccf42373f54d87fcc5ecb48d470,
         type: 2}
@@ -239,11 +244,6 @@ Prefab:
         type: 2}
       propertyPath: m_SizeDelta.x
       value: -17
-      objectReference: {fileID: 0}
-    - target: {fileID: 114372390720987666, guid: 6d814ccf42373f54d87fcc5ecb48d470,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d814ccf42373f54d87fcc5ecb48d470, type: 2}
@@ -621,7 +621,6 @@ MonoBehaviour:
   m_energyText: {fileID: 966454066}
   m_pollutionText: {fileID: 1465194614}
   m_timeText: {fileID: 2027920148}
-  m_pollutionBonus: 10
   m_cities: []
   m_coal: 10000
   m_water: 10000
@@ -673,6 +672,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_timeUnit_GUI: 60
   m_baseProductionPopulation_GUI: 100
+  m_habitantsPerConstruction_GUI: 1000
+  m_consumptionWaterPerHabitant_GUI: 0.10000000149011612
+  m_productionMoneyPerHabitant_GUI: 0.10000000149011612
+  m_consumptionEnergyPerHabitant_GUI: 0.10000000149011612
   m_spriteCity_GUI: {fileID: 0}
   m_spriteSea_GUI: {fileID: 0}
   m_spriteMountain_GUI: {fileID: 0}
@@ -681,6 +684,8 @@ MonoBehaviour:
   m_limitVelocityCoeff_GUI: {x: -0.5, y: 1}
   m_limitTTL_GUI: {x: 0.2, y: 2}
   m_limitRainedQuantity_GUI: {x: 800, y: 1200}
+  m_limitBuildingsNumber_GUI: {x: 4, y: 7}
+  m_limitPlacementBuildings_GUI: {x: -20, y: 20}
   m_satisfactionCoeff_GUI:
   - 0.5
   - 0.75
@@ -5334,6 +5339,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -30}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 1, y: 1}
+--- !u!20 &1410698854 stripped
+Camera:
+  m_PrefabParentObject: {fileID: 20492647317723250, guid: a8df8bc3854315849a777bd8446db696,
+    type: 2}
+  m_PrefabInternal: {fileID: 1906216697}
 --- !u!1 &1465194614 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1212076476654826, guid: 2350d9ae3dcd3284cbc0301afaa181ca,
@@ -5600,11 +5610,6 @@ MonoBehaviour:
   m_buttonTargetToMain: {fileID: 1226289225}
   m_isOnCity: 0
   m_cityCameraCanvas: {fileID: 665587719}
---- !u!20 &1726855589 stripped
-Camera:
-  m_PrefabParentObject: {fileID: 20492647317723250, guid: a8df8bc3854315849a777bd8446db696,
-    type: 2}
-  m_PrefabInternal: {fileID: 1117123944}
 --- !u!1 &1886353608
 GameObject:
   m_ObjectHideFlags: 0
@@ -5784,7 +5789,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1610241685366416, guid: a8df8bc3854315849a777bd8446db696, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a8df8bc3854315849a777bd8446db696, type: 2}
