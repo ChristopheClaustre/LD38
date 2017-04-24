@@ -112,7 +112,7 @@ public class Building :
     // Use this for initialization
     public void Start()
     {
-        
+        OnEnable();
     }
 
     // This function is called when the object becomes enabled and active.
