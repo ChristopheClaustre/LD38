@@ -46,18 +46,20 @@ public class TowerBuilder : MonoBehaviour
     /***************************************************
 	 ***  ATTRIBUTES            ************************
 	 ***************************************************/
-
+    
     /********  PUBLIC           ************************/
 	/********  PROTECTED        ************************/
 
     /********  PRIVATE          ************************/
 
-	private int[] existingLvls = {0,0,0,0,0,0};
-	private Vector3[] newLvlPos = {Vector3.zero,Vector3.zero,Vector3.zero,Vector3.zero,Vector3.zero,Vector3.zero};
-	private int dice;
+	private int[] m_existingLvls = {0,0,0,0,0,0};
+	private List<Vector4> m_nextPositionBuildings = new List<Vector4>();
 	private List<Sprite> lightSprites;
 	private List<Sprite> darkSprites;
-	
+
+    private float m_arcPixelPerUnit;
+    private int m_existingCities;
+
     /***************************************************
 	 ***  METHODS               ************************
 	 ***************************************************/
@@ -66,22 +68,32 @@ public class TowerBuilder : MonoBehaviour
 
     // Use this for initialization
     public void Start() {
-        newLvlPos[0].x = -0.21f;
-        newLvlPos[0].y = -0.08f;
-        newLvlPos[1].x = -0.16f;
-        newLvlPos[1].y = -0.07f;
-        newLvlPos[2].x = -0.08f;
-        newLvlPos[2].y = -0.06f;
-        newLvlPos[3].x = 0.08f;
-        newLvlPos[3].y = -0.06f;
-        newLvlPos[4].x = 0.16f;
-        newLvlPos[4].y = -0.07f;
-        newLvlPos[5].x = 0.21f;
-        newLvlPos[5].y = -0.08f;
-
+        // sprites lists
         darkSprites = new List<Sprite>{m_spriteDarkZero,m_spriteDarkOne,m_spriteDarkTwo,m_spriteDarkBalc,m_spriteDarkPlant};
         lightSprites = new List<Sprite>{m_spriteLightZero,m_spriteLightOne,m_spriteLightTwo,m_spriteLightBalc,m_spriteLightPlant};
-	}
+
+        m_arcPixelPerUnit = 1.0f / m_spriteDarkZero.pixelsPerUnit;
+        int l_number = Mathf.RoundToInt(Random.Range(Config.m_limitBuildingsNumber.x, Config.m_limitBuildingsNumber.y));
+        float l_distance = Config.m_limitPlacementBuildings.y - Config.m_limitPlacementBuildings.x;
+        float l_initial = Config.m_limitPlacementBuildings.x;
+        float l_offset = (l_distance / (l_number - 1));
+
+        for(int i = 0; i < l_number; ++i)
+        {
+            Vector4 l_vector = new Vector4();
+            l_vector.x = l_initial + (l_offset * i) + Mathf.RoundToInt(Random.Range(-1.0f, 1.0f));
+            l_vector.y = -10 + Mathf.RoundToInt(Random.Range(-1.0f, 1.0f));
+            l_vector *= m_arcPixelPerUnit;
+            // light or dark & sorting order
+            l_vector.z = Mathf.RoundToInt(Random.value);
+            // existing buildings
+            l_vector.w = 0;
+
+            m_nextPositionBuildings.Add(l_vector);
+        }
+
+        m_existingCities = 0;
+    }
 	
 	// Update is called once per frame
 	public void Update()
@@ -89,45 +101,48 @@ public class TowerBuilder : MonoBehaviour
 		City city = gameObject.GetComponent<City>();
 		Transform parentPlace = gameObject.GetComponent<Transform>();
 
-        int l_existingCities = existingLvls[0] + existingLvls[1] + existingLvls[2] + existingLvls[3] + existingLvls[4] + existingLvls[5];
-        if (city.A_kind == City.e_City.eCity && city.A_population / 100 > l_existingCities)
+        if (city.A_kind == City.e_City.eCity && city.A_population / 100 > m_existingCities)
 		{
-			dice = Random.Range(0,30);
-            int l_idPosition = dice % 6;
-            int l_idSprite = dice % 5;
+            int l_idPosition = Random.Range(0, m_nextPositionBuildings.Count);
+            int l_idSprite = Random.Range(0, System.Math.Min(darkSprites.Count, lightSprites.Count));
 
 			GameObject newLvl = Instantiate(m_prefab,parentPlace,false);
 			Transform newLvlTr = newLvl.GetComponent<Transform>();
 			SpriteRenderer newLvlR = newLvl.GetComponent<SpriteRenderer>();
 
             // set sprite
-            if ( 1 == l_idPosition || l_idPosition == 4)
-			{
-				newLvlR.sprite = lightSprites[l_idSprite];
-			}
-			else
+            if (m_nextPositionBuildings[l_idPosition].z == 0)
 			{
 				newLvlR.sprite = darkSprites[l_idSprite];
 			}
-
-            // set sorting order
-			if ( 0 == l_idPosition || l_idPosition == 5)
+			else
 			{
-				newLvlR.sortingOrder = 1;
+				newLvlR.sprite = lightSprites[l_idSprite];
 			}
 
-            // translate
-            newLvlPos[l_idPosition].x += 0.01f * Mathf.RoundToInt(Random.Range(-1.0f, 1.0f));
-            newLvlTr.Translate(newLvlPos[l_idPosition]);
-            newLvlPos[l_idPosition].y += 0.03f;
+            // set sorting order
+            newLvlR.sortingOrder += (int) m_nextPositionBuildings[l_idPosition].z;
 
-            // update existing buildings
-            existingLvls[l_idPosition] += 1;
-		}
+            // translate
+            newLvlTr.Translate(m_nextPositionBuildings[l_idPosition]);
+            updatePosition(l_idPosition);
+
+            m_existingCities++;
+        }
 	}
 	
     /********  PROTECTED        ************************/
 
     /********  PRIVATE          ************************/
 
+    private void updatePosition(int p_id)
+    {
+        Vector4 l_temp = m_nextPositionBuildings[p_id];
+
+        l_temp.x += m_arcPixelPerUnit * Mathf.RoundToInt(Random.Range(-1.0f, 1.0f)); // variation latéral
+        l_temp.y += m_arcPixelPerUnit * 3; // + 1 étage
+        l_temp.w++; // + 1 étage
+
+        m_nextPositionBuildings[p_id] = l_temp;
+    }
 }

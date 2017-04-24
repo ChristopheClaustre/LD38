@@ -30,6 +30,8 @@ public class Config :
     public Vector2 m_limitVelocityCoeff_GUI = new Vector2(-0.5f, 1.0f);
     public Vector2 m_limitTTL_GUI = new Vector2(0.2f, 2.0f);
     public Vector2 m_limitRainedQuantity_GUI = new Vector2(800, 1200);
+    public Vector2 m_limitBuildingsNumber_GUI = new Vector2(4, 7);
+    public Vector2 m_limitPlacementBuildings_GUI = new Vector2(-20, 20);
 
     public List<double> m_satisfactionCoeff_GUI = new List<double> { 0.5, 0.75, 1, 1.15 };
     public List<int> m_satisfactionThreshold_GUI = new List<int> { 20, 10, 5, 2 };
@@ -56,9 +58,10 @@ public class Config :
 
     /********  PUBLIC           ************************/
 
+    public static double m_deltaTime;
+
     public static int m_timeUnit;
     public static int m_baseProductionPopulation;
-    public static double m_deltaTime;
     public static Sprite m_spriteCity;
     public static Sprite m_spriteSea;
     public static Sprite m_spriteMountain;
@@ -69,6 +72,8 @@ public class Config :
     public static Vector2 m_limitVelocityCoeff;
     public static Vector2 m_limitTTL;
     public static Vector2 m_limitRainedQuantity;
+    public static Vector2 m_limitBuildingsNumber;
+    public static Vector2 m_limitPlacementBuildings;
 
     public static List<double> m_satisfactionCoeff = new List<double>();
     public static List<int> m_satisfactionThreshold = new List<int>();
@@ -105,6 +110,8 @@ public class Config :
         m_limitVelocityCoeff = m_limitVelocityCoeff_GUI;
         m_limitTTL = m_limitTTL_GUI;
         m_limitRainedQuantity = m_limitRainedQuantity_GUI;
+        m_limitBuildingsNumber = m_limitBuildingsNumber_GUI;
+        m_limitPlacementBuildings = m_limitPlacementBuildings_GUI;
 
         m_satisfactionCoeff.Clear();
         m_satisfactionCoeff.AddRange(m_satisfactionCoeff_GUI);
