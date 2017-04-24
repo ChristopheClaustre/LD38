@@ -52,7 +52,6 @@ public class TowerBuilder : MonoBehaviour
 
     /********  PRIVATE          ************************/
 
-	private int[] m_existingLvls = {0,0,0,0,0,0};
 	private List<Vector4> m_nextPositionBuildings = new List<Vector4>();
 	private List<Sprite> lightSprites;
 	private List<Sprite> darkSprites;
@@ -82,7 +81,7 @@ public class TowerBuilder : MonoBehaviour
         {
             Vector4 l_vector = new Vector4();
             l_vector.x = l_initial + (l_offset * i) + Mathf.RoundToInt(Random.Range(-1.0f, 1.0f));
-            l_vector.y = -10 + Mathf.RoundToInt(Random.Range(-1.0f, 1.0f));
+            l_vector.y = -7 + Mathf.RoundToInt(Random.Range(-1.0f, 1.0f));
             l_vector *= m_arcPixelPerUnit;
             // light or dark & sorting order
             l_vector.z = Mathf.RoundToInt(Random.value);
@@ -101,10 +100,9 @@ public class TowerBuilder : MonoBehaviour
 		City city = gameObject.GetComponent<City>();
 		Transform parentPlace = gameObject.GetComponent<Transform>();
 
-        if (city.A_kind == City.e_City.eCity && city.A_population / 100 > m_existingCities)
+        if (city.A_kind == City.e_City.eCity && city.A_population / Config.m_habitantsPerConstruction > m_existingCities)
 		{
             int l_idPosition = Random.Range(0, m_nextPositionBuildings.Count);
-            int l_idSprite = Random.Range(0, System.Math.Min(darkSprites.Count, lightSprites.Count));
 
 			GameObject newLvl = Instantiate(m_prefab,parentPlace,false);
 			Transform newLvlTr = newLvl.GetComponent<Transform>();
@@ -113,11 +111,13 @@ public class TowerBuilder : MonoBehaviour
             // set sprite
             if (m_nextPositionBuildings[l_idPosition].z == 0)
 			{
-				newLvlR.sprite = darkSprites[l_idSprite];
+                int l_idSprite = Random.Range(0, System.Math.Min(darkSprites.Count, darkSprites.Count));
+                newLvlR.sprite = darkSprites[l_idSprite];
 			}
 			else
 			{
-				newLvlR.sprite = lightSprites[l_idSprite];
+                int l_idSprite = Random.Range(0, System.Math.Min(darkSprites.Count, lightSprites.Count));
+                newLvlR.sprite = lightSprites[l_idSprite];
 			}
 
             // set sorting order
