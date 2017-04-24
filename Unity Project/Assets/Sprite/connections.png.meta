@@ -1,21 +1,13 @@
 fileFormatVersion: 2
-guid: 89c3fac89c4cfb14baea7eb7d5882c19
-timeCreated: 1493029929
+guid: d1ce6574c12b02f4981fe6d66e21b381
+timeCreated: 1493030695
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Coal_Icon
-    21300002: Population_Icon
-    21300004: Polution_Icon
-    21300006: Energy_Icon
-    21300008: Money_Icon
-    21300010: Satisfaction_Icon
-    21300012: Water_Icon
-    21300014: Calendar_Icon
-    21300016: TrendUp_Icon
-    21300018: TrendDown_Icon
-    21300020: Plus_Icon
-    21300022: Minus_Icon
+    21300000: connection_Woods
+    21300002: connection_Island
+    21300004: connection_PlaceHolder
+    21300006: connection_PlaceHolder2
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -114,156 +106,52 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Coal_Icon
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 35
-        width: 24
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Population_Icon
-      rect:
-        serializedVersion: 2
-        x: 26
-        y: 34
-        width: 24
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Polution_Icon
-      rect:
-        serializedVersion: 2
-        x: 51
-        y: 35
-        width: 24
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Energy_Icon
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 18
-        width: 24
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Money_Icon
-      rect:
-        serializedVersion: 2
-        x: 26
-        y: 18
-        width: 24
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Satisfaction_Icon
-      rect:
-        serializedVersion: 2
-        x: 51
-        y: 18
-        width: 24
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Water_Icon
+      name: connection_Woods
       rect:
         serializedVersion: 2
         x: 1
         y: 1
-        width: 24
-        height: 16
+        width: 11
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Calendar_Icon
+      name: connection_Island
       rect:
         serializedVersion: 2
-        x: 26
+        x: 15
         y: 1
-        width: 24
-        height: 16
+        width: 12
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: TrendUp_Icon
+      name: connection_PlaceHolder
       rect:
         serializedVersion: 2
-        x: 51
-        y: 2
-        width: 9
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: TrendDown_Icon
-      rect:
-        serializedVersion: 2
-        x: 61
-        y: 2
-        width: 9
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Plus_Icon
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 6
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Minus_Icon
-      rect:
-        serializedVersion: 2
-        x: 72
+        x: 30
         y: 1
-        width: 10
-        height: 4
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: connection_PlaceHolder2
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 1
+        width: 17
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
