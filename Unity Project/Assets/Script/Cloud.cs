@@ -84,7 +84,7 @@ public class Cloud : MonoBehaviour
 
         // set velocity of the animation of progressive disapearing
 //        m_pivotDisparation.GetComponent<Animator>().SetFloat("ArcVelocity", (float) m_TTL / Config.m_timeUnit);
-        m_pivotDisparation.transform.localScale = Vector3.one * ((float)m_waterQuantity / 1000.0f);
+        m_pivotDisparation.transform.localScale = Vector3.one * ((float)m_waterQuantity / Config.m_limitRainedQuantity.y);
 
         // destroy object ??
         if (m_waterQuantity <= 0)

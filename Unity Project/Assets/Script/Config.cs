@@ -21,6 +21,10 @@ public class Config :
     public int m_timeUnit_GUI = 60;
     public int m_baseProductionPopulation_GUI = 100;
     public int m_habitantsPerConstruction_GUI = 1000;
+    public double m_consumptionWaterPerHabitant_GUI = 0.10f;
+    public double m_productionMoneyPerHabitant_GUI = 0.10f;
+    public double m_consumptionEnergyPerHabitant_GUI = 0.10f;
+
     public Sprite m_spriteCity_GUI;
     public Sprite m_spriteSea_GUI;
     public Sprite m_spriteMountain_GUI;
@@ -64,6 +68,10 @@ public class Config :
     public static int m_timeUnit;
     public static int m_baseProductionPopulation;
     public static int m_habitantsPerConstruction;
+    public static double m_consumptionWaterPerHabitant;
+    public static double m_productionMoneyPerHabitant;
+    public static double m_consumptionEnergyPerHabitant;
+
     public static Sprite m_spriteCity;
     public static Sprite m_spriteSea;
     public static Sprite m_spriteMountain;
@@ -108,6 +116,11 @@ public class Config :
         m_deltaTime = Time.deltaTime / m_timeUnit;
         m_baseProductionPopulation = m_baseProductionPopulation_GUI;
         m_habitantsPerConstruction = m_habitantsPerConstruction_GUI;
+
+        m_consumptionWaterPerHabitant = m_consumptionWaterPerHabitant_GUI;
+        m_productionMoneyPerHabitant = m_productionMoneyPerHabitant_GUI;
+        m_consumptionEnergyPerHabitant = m_consumptionEnergyPerHabitant_GUI;
+
 
         m_limitTimerWind = m_limitTimerWind_GUI;
         m_limitVelocityCoeff = m_limitVelocityCoeff_GUI;

@@ -25,15 +25,15 @@ public class PlanetBuilder :
     /********  PRIVATE          ************************/
 
     [SerializeField]
-    private string m_filenameDictionary = "cities.txt";
-    [SerializeField]
     private GameObject m_cityPrefab;
     [SerializeField, Range(0, 15)]
     private int m_tileNumber = 15;
     [SerializeField, Range(0, 5)]
     private int m_cityNumber = 2;
     [SerializeField, Range(1, 5)]
-    private int m_reliefNumber = 2;
+    private int m_mountainNumber = 1;
+    [SerializeField, Range(1, 5)]
+    private int m_seaNumber = 1;
 
     /***************************************************
 	 ***  SUB-CLASSES           ************************
@@ -55,9 +55,6 @@ public class PlanetBuilder :
 
     /********  PRIVATE          ************************/
 
-    [SerializeField]
-    private List<string> m_citiesDictionary;
-
     /***************************************************
 	 ***  METHODS               ************************
 	 ***************************************************/
@@ -67,36 +64,40 @@ public class PlanetBuilder :
     // Use this for initialization
     public void Start()
     {
-        if (m_cityNumber + m_reliefNumber > m_tileNumber)
+        if (m_cityNumber + m_mountainNumber + m_seaNumber > m_tileNumber)
         {
             Debug.LogError("Error in planet building configuration : too much city and relief");
         }
 
-        // retrieve the cities names
-        fillDictionary();
-
         // create all the cities
         int l_cityToAdd = m_cityNumber;
-        int l_reliefToAdd = m_reliefNumber;
+        int l_mountainToAdd = m_mountainNumber;
+        int l_seaToAdd = m_seaNumber;
 
         List<GameObject> l_cities = new List<GameObject>();
-        for (int i = m_tileNumber; i > 0; --i)
+        for (int i = 0; i < m_tileNumber; ++i)
         {
             GameObject l_go = Instantiate(m_cityPrefab, transform);
             l_cities.Add(l_go);
-            l_go.GetComponentInChildren<City>().m_name = 
-                m_citiesDictionary[Random.Range(0, m_citiesDictionary.Count)];
 
+            City.KindCity l_kind = City.KindCity.ePrairie;
             if (l_cityToAdd > 0)
             {
                 l_cityToAdd--;
-                l_go.GetComponentInChildren<City>().becomeSomethingAwesome(City.e_City.eCity);
+                l_kind = City.KindCity.eCity;
             }
-            else if (l_reliefToAdd > 0)
+            else if (l_mountainToAdd > 0)
             {
-                l_reliefToAdd--;
-                l_go.GetComponentInChildren<City>().becomeSomethingAwesome(City.e_City.eRelief);
+                l_mountainToAdd--;
+                l_kind = City.KindCity.eMountain;
             }
+            else if (l_seaToAdd > 0)
+            {
+                l_seaToAdd--;
+                l_kind = City.KindCity.eSea;
+            }
+
+            l_go.GetComponentInChildren<City>().becomeSomethingAwesome(l_kind);
         }
 
         // rotate the cities
@@ -117,13 +118,5 @@ public class PlanetBuilder :
     /********  PROTECTED        ************************/
 
     /********  PRIVATE          ************************/
-
-    private void fillDictionary()
-    {
-        StreamReader l_sr = new StreamReader(Application.dataPath + "/" + m_filenameDictionary);
-        string fileContents = l_sr.ReadToEnd();
-        l_sr.Close();
-
-        m_citiesDictionary = fileContents.Split('\n').ToList();
-    }
+    
 }

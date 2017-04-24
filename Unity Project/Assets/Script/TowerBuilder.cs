@@ -100,7 +100,7 @@ public class TowerBuilder : MonoBehaviour
 		City city = gameObject.GetComponent<City>();
 		Transform parentPlace = gameObject.GetComponent<Transform>();
 
-        if (city.A_kind == City.e_City.eCity && city.A_population / Config.m_habitantsPerConstruction > m_existingCities)
+        if (city.A_kind == City.KindCity.eCity && city.A_population / Config.m_habitantsPerConstruction > m_existingCities)
 		{
             int l_idPosition = Random.Range(0, m_nextPositionBuildings.Count);
 

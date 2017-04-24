@@ -9,7 +9,6 @@ using System.Collections.Generic;
  *** THE CLASS              ************************
  ***************************************************/
 
-
 public class City : MonoBehaviour
 {
     /***************************************************
@@ -25,7 +24,9 @@ public class City : MonoBehaviour
     /********  PRIVATE          ************************/
 
     [SerializeField]
-    private e_City m_kind = e_City.eField;
+    private KindCity m_kind = KindCity.ePrairie;
+    [SerializeField]
+    private List<GameObject> m_buildingsGO;
 
     /***************************************************
 	 ***  SUB-CLASSES           ************************
@@ -42,12 +43,12 @@ public class City : MonoBehaviour
         eMax
     }
 
-    public enum e_City
+    public enum KindCity
     {
-        eRelief = 0,
-        eField,
-        eCity,
-        eMax
+        ePrairie = 0,
+        eMountain,
+        eSea,
+        eCity
     }
 
     /********  PROTECTED        ************************/
@@ -78,7 +79,7 @@ public class City : MonoBehaviour
         }
     }
 
-    public e_City A_kind
+    public KindCity A_kind
     {
         get
         {
@@ -90,7 +91,7 @@ public class City : MonoBehaviour
 
     /********  PRIVATE          ************************/
 
-    private List<Building> m_buildings;
+    private List<Building> m_activeBuildings;
     [SerializeField]
     private double m_population = 0;
     private double m_sunlight = 1;
@@ -110,14 +111,12 @@ public class City : MonoBehaviour
     public void Start()
     {
         updateWindStrength();
-//        m_closeViewCamera = GetComponentInChildren<Camera>();
 
         // creation population
-        if (m_population == 0)
+        if (m_population <= 0)
         {
             m_population = Random.Range(1, 11);
         }
-
     }
 
     // Update is called once per frame
@@ -132,9 +131,9 @@ public class City : MonoBehaviour
         }
 
         // update population
-        if (m_kind == e_City.eCity)
+        if (m_kind == KindCity.eCity)
         {
-            m_population += Config.m_baseProductionPopulation * getSatisfactionCoeff() * Config.m_deltaTime;
+            m_population += Planet.A_instance.A_birthRatio * getSatisfactionCoeff();
         }
     }
 
@@ -172,30 +171,51 @@ public class City : MonoBehaviour
 
         m_sunlight = m_positionCoeff * m_cloudCoeff;
     }
-
+    
     public double getCoalConsumption()
     {
-        return 1;
+        return 1; /// CHANGER MOI, CHANGER MOI, CHANGER MOI
     }
 
     public double getWaterConsumption()
     {
-        return 1;
+        return m_population * Config.m_consumptionWaterPerHabitant;
     }
 
     public double getMoneyProduction()
     {
-        return 1;
+        return m_population * Config.m_productionMoneyPerHabitant;
     }
 
     public double getEnergyProduction()
     {
-        return 0.5;
+        double l_consumption = m_population * Config.m_consumptionEnergyPerHabitant;
+        double l_production = 0.5; /// CHANGER MOI, CHANGER MOI, CHANGER MOI
+        return l_production - l_consumption;
     }
 
     public double getPollutionProduction()
     {
-        return 0;
+        double l_prod;
+        switch (m_kind)
+        {
+            case KindCity.eMountain:
+                l_prod = -10;
+                break;
+            case KindCity.eSea:
+                l_prod = -10;
+                break;
+            case KindCity.ePrairie:
+                l_prod = -10;
+                break;
+            case KindCity.eCity:
+                l_prod = 70; /// CHANGER MOI, CHANGER MOI, CHANGER MOI
+                break;
+            default:
+                l_prod = 0;
+                break;
+        }
+        return l_prod;
     }
 
     public double getSatisfactionCoeff()
@@ -216,26 +236,25 @@ public class City : MonoBehaviour
         return Config.m_windStrengthCoeff[(int) m_windStrength];
     }
 
-    public void killEveryone(double p_killRatio)
+    public void becomeSomethingAwesome(KindCity p_kind)
     {
-        m_population -= (p_killRatio * m_population);
-    }
-
-    public void becomeSomethingAwesome(e_City p_kind)
-    {
-        if (m_kind == e_City.eField)
+        if (m_kind == KindCity.ePrairie)
         {
             m_kind = p_kind;
+            m_name = Namer.getName(p_kind);
+
             switch (p_kind)
             {
-                case e_City.eField:
+                case KindCity.ePrairie:
                     break;
-                case e_City.eCity:
+                case KindCity.eCity:
                     GetComponentInChildren<SpriteRenderer>().sprite = Config.m_spriteCity;
                     break;
-                case e_City.eRelief:
-                    GetComponentInChildren<SpriteRenderer>().sprite =
-                        (Random.Range(0, 1000) % 2 == 0) ? Config.m_spriteMountain : Config.m_spriteSea;
+                case KindCity.eMountain:
+                    GetComponentInChildren<SpriteRenderer>().sprite = Config.m_spriteMountain;
+                    break;
+                case KindCity.eSea:
+                    GetComponentInChildren<SpriteRenderer>().sprite = Config.m_spriteSea;
                     break;
                 default:
                     break;

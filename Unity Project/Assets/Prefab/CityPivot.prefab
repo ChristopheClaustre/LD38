@@ -478,7 +478,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 593d81736e6dc2e4194bee5cd8f40661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_kind: 1
+  m_name: 
+  m_kind: 0
   m_closeViewCamera: {fileID: 20492647317723250}
   m_population: 0
 --- !u!114 &114928668859687416
