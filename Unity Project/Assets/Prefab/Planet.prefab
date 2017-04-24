@@ -154,7 +154,6 @@ MonoBehaviour:
   m_energyText: {fileID: 0}
   m_pollutionText: {fileID: 0}
   m_timeText: {fileID: 0}
-  m_pollutionBonus: 10
   m_cities: []
   m_coal: 10000
   m_water: 10000
@@ -173,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84693c85ad27fef4ebe0b8dd99dd7fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_limitTimer: {x: 0.2, y: 0.5}
+  m_limitTimer: {x: 0.5, y: 1}
   m_prefabCloud: {fileID: 1571008506802138, guid: be5e64e67dc02e64b9fc4f479b2da864,
     type: 2}
 --- !u!114 &114877132041642928
@@ -190,6 +189,9 @@ MonoBehaviour:
   m_timeUnit_GUI: 60
   m_baseProductionPopulation_GUI: 100
   m_habitantsPerConstruction_GUI: 1000
+  m_consumptionWaterPerHabitant_GUI: 0.10000000149011612
+  m_productionMoneyPerHabitant_GUI: 0.10000000149011612
+  m_consumptionEnergyPerHabitant_GUI: 0.10000000149011612
   m_spriteCity_GUI: {fileID: 21300000, guid: 6edc494180904fa4aacad5cdb60909e6, type: 3}
   m_spriteSea_GUI: {fileID: 21300000, guid: efdc18da2a214794c8e9f2a32d476848, type: 3}
   m_spriteMountain_GUI: {fileID: 21300000, guid: 0713900b809471b4b8465144d06d2f3e,
@@ -198,7 +200,7 @@ MonoBehaviour:
   m_limitTimerWind_GUI: {x: 0.1, y: 0.5}
   m_limitVelocityCoeff_GUI: {x: -0.5, y: 1}
   m_limitTTL_GUI: {x: 0.2, y: 2}
-  m_limitRainedQuantity_GUI: {x: 800, y: 1200}
+  m_limitRainedQuantity_GUI: {x: 100, y: 300}
   m_limitBuildingsNumber_GUI: {x: 4, y: 7}
   m_limitPlacementBuildings_GUI: {x: -20, y: 20}
   m_satisfactionCoeff_GUI:

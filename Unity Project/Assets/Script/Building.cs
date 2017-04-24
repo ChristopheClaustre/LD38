@@ -100,7 +100,7 @@ public class Building :
     /********  PROTECTED        ************************/
 
     /********  PRIVATE          ************************/
-
+    
     private Dictionary<Ressource, Production> m_production = new Dictionary<Ressource, Production>();
 
     /***************************************************
@@ -112,6 +112,14 @@ public class Building :
     // Use this for initialization
     public void Start()
     {
+        
+    }
+
+    // This function is called when the object becomes enabled and active.
+    public void OnEnable()
+    {
+        m_production.Clear();
+
         m_production.Add(Ressource.ePollution, m_pollution);
         m_production.Add(Ressource.eCoal, m_coal);
         m_production.Add(Ressource.eWater, m_water);
