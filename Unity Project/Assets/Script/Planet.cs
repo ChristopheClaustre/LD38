@@ -250,7 +250,7 @@ public class Planet : MonoBehaviour
 
         if (m_tooMuchPollution = m_pollution > 100)
         {
-            m_extraPollution = m_pollution;
+            m_extraPollution = m_pollution - 100;
             m_pollution = 100;
         }
 

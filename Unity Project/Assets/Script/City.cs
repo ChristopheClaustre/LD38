@@ -26,7 +26,7 @@ public class City : MonoBehaviour
     [SerializeField]
     private KindCity m_kind = KindCity.ePrairie;
     [SerializeField]
-    private List<GameObject> m_buildingsGO;
+    private List<GameObject> m_buildingsGO = new List<GameObject>();
 
     /***************************************************
 	 ***  SUB-CLASSES           ************************
@@ -91,7 +91,7 @@ public class City : MonoBehaviour
 
     /********  PRIVATE          ************************/
 
-    private List<Building> m_activeBuildings;
+    private List<Building> m_buildings = new List<Building>();
     [SerializeField]
     private double m_population = 0;
     private double m_sunlight = 1;
@@ -117,6 +117,9 @@ public class City : MonoBehaviour
         {
             m_population = Random.Range(1, 11);
         }
+
+        // get the buildings
+        getActiveBuildings();
     }
 
     // Update is called once per frame
@@ -265,6 +268,29 @@ public class City : MonoBehaviour
     /********  PROTECTED        ************************/
 
     /********  PRIVATE          ************************/
+
+    private void getActiveBuildings()
+    {
+        m_buildings.Clear();
+
+        foreach (var l_go in m_buildingsGO)
+        {
+            m_buildings.Add(getActiveBuilding(l_go));
+        }
+    }
+
+    private static Building getActiveBuilding(GameObject p_go)
+    {
+        foreach (var l_building in p_go.GetComponentsInChildren<Building>())
+        {
+            if (l_building.enabled)
+            {
+                return l_building;
+            }
+        }
+
+        return null;
+    }
 
     private void updateWindStrength()
     {
