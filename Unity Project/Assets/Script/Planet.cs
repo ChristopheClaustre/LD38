@@ -129,7 +129,11 @@ public class Planet : MonoBehaviour
         // update ressources and UI
         updateRessources();
 
-        checkDefeatCondition();
+        // victory ?
+        if (getPopulation() <= 0)
+        {
+            victory();
+        }
     }
 
     public int getPopulation()
@@ -168,21 +172,13 @@ public class Planet : MonoBehaviour
         updatePollution(Config.m_deltaTime);
         m_time += Config.m_deltaTime;
 
+        // update UI;
         m_coalText.GetComponent<Text>().text = "" + Math.Floor(m_coal);
         m_waterText.GetComponent<Text>().text = "" + Math.Floor(m_water);
         m_moneyText.GetComponent<Text>().text = "" + Math.Floor(m_money);
         m_energyText.GetComponent<Text>().text = "" + Math.Floor(m_energy);
         m_pollutionText.GetComponent<Text>().text = "" + Math.Floor(m_pollution);
         m_timeText.GetComponent<Text>().text = "" + Math.Floor(m_time);
-    }
-
-    private void checkDefeatCondition()
-    {
-        // victory
-        if (getPopulation() <= 0)
-        {
-            victory();
-        }
     }
 
     private void victory()
