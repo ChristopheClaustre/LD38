@@ -117,6 +117,7 @@ public class City : MonoBehaviour
         {
             m_population = Random.Range(1, 11);
         }
+
     }
 
     // Update is called once per frame
