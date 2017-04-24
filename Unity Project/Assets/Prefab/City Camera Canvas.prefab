@@ -1170,7 +1170,7 @@ GameObject:
   - component: {fileID: 222729769034753790}
   - component: {fileID: 114619749831843522}
   m_Layer: 5
-  m_Name: Panel_resource
+  m_Name: Panel_coal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1478,7 +1478,7 @@ GameObject:
   - component: {fileID: 222799874639928792}
   - component: {fileID: 114777209730277074}
   m_Layer: 5
-  m_Name: Panel_resource (3)
+  m_Name: Panel_energy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2095,7 +2095,7 @@ GameObject:
   - component: {fileID: 222574913730037460}
   - component: {fileID: 114746853061025988}
   m_Layer: 5
-  m_Name: Panel_resource (1)
+  m_Name: Panel_water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2932,7 +2932,7 @@ GameObject:
   - component: {fileID: 222724071106398338}
   - component: {fileID: 114891813139762630}
   m_Layer: 5
-  m_Name: Panel_resource (2)
+  m_Name: Panel_money
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3087,7 +3087,7 @@ GameObject:
   - component: {fileID: 222966346175910718}
   - component: {fileID: 114847370462281566}
   m_Layer: 5
-  m_Name: Panel_resource (4)
+  m_Name: Panel_pollution
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4356,7 +4356,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114043916341593962}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114985721377330302}
+        m_MethodName: DestroyZone1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114177497521012662
@@ -5021,7 +5032,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114143863192557668}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114985721377330302}
+        m_MethodName: DestroyZone2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114301822533312364
@@ -5096,13 +5118,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 224419224698678428}
-  m_Horizontal: 1
-  m_Vertical: 0
+  m_Horizontal: 0
+  m_Vertical: 1
   m_MovementType: 1
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 20
   m_Viewport: {fileID: 224724547490229134}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 114121032122070824}
@@ -7001,7 +7023,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114112611254465372}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114985721377330302}
+        m_MethodName: DestroyZone0
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114587559250573574
@@ -8581,7 +8614,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114398734768241674}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114985721377330302}
+        m_MethodName: DestroyZone3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114817020927706862
@@ -9583,19 +9627,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d44b5670c6d87446ad0129fe31e10b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_populationText: {fileID: 0}
-  m_coalText: {fileID: 1649215847399466}
-  m_waterText: {fileID: 1235403406084526}
-  m_moneyText: {fileID: 1486434541677268}
-  m_energyText: {fileID: 1539188074132382}
-  m_pollutionText: {fileID: 1353563220900310}
+  m_coalGo: {fileID: 1361218192636208}
+  m_waterGo: {fileID: 1657773827204202}
+  m_moneyGo: {fileID: 1905076247921940}
+  m_energyGo: {fileID: 1482787787604144}
+  m_pollutionGo: {fileID: 1964895303036530}
+  m_populationText: {fileID: 1838324426571760}
+  m_destroyZone0Text: {fileID: 1079258597992966}
+  m_destroyZone1Text: {fileID: 1843728761072634}
+  m_destroyZone2Text: {fileID: 1356891001512258}
+  m_destroyZone3Text: {fileID: 1925552260510214}
   m_shopPanel: {fileID: 1537333929046866}
   m_zone0Panel: {fileID: 1010327701347106}
   m_zone1Panel: {fileID: 1045161246220072}
   m_zone2Panel: {fileID: 1738659257954326}
   m_zone3Panel: {fileID: 1765397405251572}
   m_shopBuildings: {fileID: 1133367254027986}
-  shopScrollBar: {fileID: 114121032122070824}
+  m_shopScrollBar: {fileID: 114121032122070824}
+  m_iconArrowUpSprite: {fileID: 21300016, guid: 89c3fac89c4cfb14baea7eb7d5882c19,
+    type: 3}
+  m_iconArrowDownSprite: {fileID: 21300018, guid: 89c3fac89c4cfb14baea7eb7d5882c19,
+    type: 3}
+  m_iconPlusSprite: {fileID: 21300020, guid: 89c3fac89c4cfb14baea7eb7d5882c19, type: 3}
+  m_iconMinusSprite: {fileID: 21300022, guid: 89c3fac89c4cfb14baea7eb7d5882c19, type: 3}
   m_cityGO: {fileID: 0}
 --- !u!114 &114997425604357246
 MonoBehaviour:
@@ -11340,7 +11394,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -13.2, y: 194}
+  m_AnchoredPosition: {x: -50.6, y: 187.3}
   m_SizeDelta: {x: -359.5, y: -429.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224137721492447984
