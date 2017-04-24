@@ -27,6 +27,20 @@ public class CityUI :
     public GameObject m_energyText;
     public GameObject m_pollutionText;
 
+    //UI Panels
+    public GameObject m_shopPanel;
+    public GameObject m_zone0Panel;
+    public GameObject m_zone1Panel;
+    public GameObject m_zone2Panel;
+    public GameObject m_zone3Panel;
+
+
+    public GameObject m_shopBuildings;
+
+    //UI Scroll
+    public Scrollbar shopScrollBar;
+
+
     /********  PROTECTED        ************************/
 
     /********  PRIVATE          ************************/
@@ -81,6 +95,7 @@ public class CityUI :
     public void Start()
     {
         A_cityGO = m_cityGO;
+        initializeUI();
         updateUI();
     }
 
@@ -90,9 +105,53 @@ public class CityUI :
         updateUI();
     }
 
+    public void showShop()
+    {
+        m_shopPanel.SetActive(!m_shopPanel.activeSelf);
+    }
+
+    public void showZone0()
+    {
+        m_zone0Panel.SetActive(!m_zone0Panel.activeSelf);
+        //m_shopPanel.SetActive(false);
+    }
+
+    public void showZone1()
+    {
+        m_zone1Panel.SetActive(!m_zone1Panel.activeSelf);
+        //m_shopPanel.SetActive(false);
+    }
+
+    public void showZone2()
+    {
+        m_zone2Panel.SetActive(!m_zone2Panel.activeSelf);
+        //m_shopPanel.SetActive(false);
+    }
+
+    public void showZone3()
+    {
+        m_zone3Panel.SetActive(!m_zone3Panel.activeSelf);
+        //m_shopPanel.SetActive(false);
+    }
+
+    public void scrollShop()
+    {
+        m_shopBuildings.transform.localPosition = new Vector3(0, shopScrollBar.value*400, 0);
+        //m_shopPanel.SetActive(false);
+    }
+
+
     /********  PROTECTED        ************************/
 
     /********  PRIVATE          ************************/
+    private void initializeUI()
+    {
+        m_shopPanel.SetActive(false);
+        m_zone0Panel.SetActive(false);
+        m_zone1Panel.SetActive(false);
+        m_zone2Panel.SetActive(false);
+        m_zone3Panel.SetActive(false);
+    }
 
     private void updateUI()
     {
@@ -107,5 +166,6 @@ public class CityUI :
             m_pollutionText.GetComponent<Text>().text = "" + m_cityGO.GetComponentInChildren<City>().getPollutionProduction();
         }
     }
+    
 
 }

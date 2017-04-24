@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 4427551016178108}
   - component: {fileID: 61832493806525136}
   - component: {fileID: 114928668859687416}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: TriggerCameraTransition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
