@@ -87,11 +87,27 @@ public class City : MonoBehaviour
         }
     }
 
+    public List<Building> A_buildings
+    {
+        get
+        {
+            List<Building> l_buildings = new List<Building>();
+
+            foreach (var l_go in m_buildingsGO)
+            {
+                l_buildings.Add(getActiveBuilding(l_go));
+            }
+            m_buildingsDebug = l_buildings;
+
+            return l_buildings;
+        }
+    }
+
     /********  PROTECTED        ************************/
 
     /********  PRIVATE          ************************/
 
-    private List<Building> m_buildings = new List<Building>();
+    private List<Building> m_buildingsDebug = new List<Building>();
     [SerializeField]
     private double m_population = 0;
     private double m_sunlight = 1;
@@ -269,14 +285,16 @@ public class City : MonoBehaviour
 
     /********  PRIVATE          ************************/
 
-    private void getActiveBuildings()
+    private List<Building> getActiveBuildings()
     {
-        m_buildings.Clear();
+        List<Building> l_buildings = new List<Building>();
 
         foreach (var l_go in m_buildingsGO)
         {
-            m_buildings.Add(getActiveBuilding(l_go));
+            l_buildings.Add(getActiveBuilding(l_go));
         }
+
+        return l_buildings;
     }
 
     private static Building getActiveBuilding(GameObject p_go)
