@@ -77,13 +77,16 @@ public class CityUI :
 
     private void updateUI()
     {
-        // update UI
-        m_populationText.GetComponent<Text>().text = "" + Math.Floor(m_cityGO.GetComponent<City>().A_population);
-        m_coalText.GetComponent<Text>().text = "" + m_cityGO.GetComponent<City>().getCoalConsumption();
-        m_waterText.GetComponent<Text>().text = "" + m_cityGO.GetComponent<City>().getWaterConsumption();
-        m_moneyText.GetComponent<Text>().text = "" + m_cityGO.GetComponent<City>().getMoneyProduction();
-        m_energyText.GetComponent<Text>().text = "" + m_cityGO.GetComponent<City>().getEnergyProduction();
-        m_pollutionText.GetComponent<Text>().text = "" + m_cityGO.GetComponent<City>().getPollutionProduction();
+        if (m_cityGO != null)
+        {
+            // update UI
+            m_populationText.GetComponent<Text>().text = "" + Math.Floor(m_cityGO.GetComponent<City>().A_population);
+            m_coalText.GetComponent<Text>().text = "" + m_cityGO.GetComponent<City>().getCoalConsumption();
+            m_waterText.GetComponent<Text>().text = "" + m_cityGO.GetComponent<City>().getWaterConsumption();
+            m_moneyText.GetComponent<Text>().text = "" + m_cityGO.GetComponent<City>().getMoneyProduction();
+            m_energyText.GetComponent<Text>().text = "" + m_cityGO.GetComponent<City>().getEnergyProduction();
+            m_pollutionText.GetComponent<Text>().text = "" + m_cityGO.GetComponent<City>().getPollutionProduction();
+        }
     }
 
 }

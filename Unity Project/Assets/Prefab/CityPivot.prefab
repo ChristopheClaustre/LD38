@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114507253869475534}
   - component: {fileID: 61308961311368940}
   - component: {fileID: 114164255101302646}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: City
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4270382622167360}
   - component: {fileID: 212454066484106310}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Sprite Building (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4072174475831590}
   - component: {fileID: 212202420658343438}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Sprite Building (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 124770897830867190}
   - component: {fileID: 92094175219590366}
   - component: {fileID: 81150282005135318}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Close View Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4689488698799860}
   - component: {fileID: 212914385531239464}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Sprite City
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 4427551016178108}
   - component: {fileID: 61832493806525136}
   - component: {fileID: 114928668859687416}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TriggerCameraTransition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,7 +153,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4612242776003180}
   - component: {fileID: 212455330344069704}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Sprite Building (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4506918639003936}
   - component: {fileID: 212191571528085656}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Sprite Building (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,7 +266,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1610241685366416}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -456,17 +456,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e34e6d5d26a334140935087aabe2e18d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1301588044352306, guid: 83d77754e9c8c2449bc9294f78877eb6, type: 2}
-  spriteDarkZero: {fileID: 21300000, guid: 9b250865d3a08c841b86ab9ba5b3a11e, type: 3}
-  spriteDarkOne: {fileID: 21300002, guid: 9b250865d3a08c841b86ab9ba5b3a11e, type: 3}
-  spriteDarkTwo: {fileID: 21300004, guid: 9b250865d3a08c841b86ab9ba5b3a11e, type: 3}
-  spriteDarkBalc: {fileID: 21300024, guid: 9b250865d3a08c841b86ab9ba5b3a11e, type: 3}
-  spriteDarkPlant: {fileID: 21300032, guid: 9b250865d3a08c841b86ab9ba5b3a11e, type: 3}
-  spriteLightZero: {fileID: 21300006, guid: 9b250865d3a08c841b86ab9ba5b3a11e, type: 3}
-  spriteLightOne: {fileID: 21300020, guid: 9b250865d3a08c841b86ab9ba5b3a11e, type: 3}
-  spriteLightTwo: {fileID: 21300022, guid: 9b250865d3a08c841b86ab9ba5b3a11e, type: 3}
-  spriteLightBalc: {fileID: 21300026, guid: 9b250865d3a08c841b86ab9ba5b3a11e, type: 3}
-  spriteLightPlant: {fileID: 21300036, guid: 9b250865d3a08c841b86ab9ba5b3a11e, type: 3}
+  m_prefab: {fileID: 1301588044352306, guid: 83d77754e9c8c2449bc9294f78877eb6, type: 2}
+  m_spriteDarkZero: {fileID: 21300000, guid: 9b250865d3a08c841b86ab9ba5b3a11e, type: 3}
+  m_spriteDarkOne: {fileID: 21300002, guid: 9b250865d3a08c841b86ab9ba5b3a11e, type: 3}
+  m_spriteDarkTwo: {fileID: 21300004, guid: 9b250865d3a08c841b86ab9ba5b3a11e, type: 3}
+  m_spriteDarkBalc: {fileID: 21300024, guid: 9b250865d3a08c841b86ab9ba5b3a11e, type: 3}
+  m_spriteDarkPlant: {fileID: 21300032, guid: 9b250865d3a08c841b86ab9ba5b3a11e, type: 3}
+  m_spriteLightZero: {fileID: 21300006, guid: 9b250865d3a08c841b86ab9ba5b3a11e, type: 3}
+  m_spriteLightOne: {fileID: 21300020, guid: 9b250865d3a08c841b86ab9ba5b3a11e, type: 3}
+  m_spriteLightTwo: {fileID: 21300022, guid: 9b250865d3a08c841b86ab9ba5b3a11e, type: 3}
+  m_spriteLightBalc: {fileID: 21300026, guid: 9b250865d3a08c841b86ab9ba5b3a11e, type: 3}
+  m_spriteLightPlant: {fileID: 21300036, guid: 9b250865d3a08c841b86ab9ba5b3a11e, type: 3}
 --- !u!114 &114507253869475534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -478,8 +478,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 593d81736e6dc2e4194bee5cd8f40661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_closeViewCamera: {fileID: 0}
-  m_population: 100
+  m_kind: 1
+  m_closeViewCamera: {fileID: 20492647317723250}
+  m_population: 0
 --- !u!114 &114928668859687416
 MonoBehaviour:
   m_ObjectHideFlags: 1

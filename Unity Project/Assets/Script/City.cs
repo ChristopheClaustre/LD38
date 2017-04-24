@@ -18,9 +18,14 @@ public class City : MonoBehaviour
 
     /********  PUBLIC           ************************/
 
+    public string m_name = "";
+
     /********  PROTECTED        ************************/
 
     /********  PRIVATE          ************************/
+
+    [SerializeField]
+    private e_City m_kind = e_City.eField;
 
     /***************************************************
 	 ***  SUB-CLASSES           ************************
@@ -28,12 +33,20 @@ public class City : MonoBehaviour
 
     /********  PUBLIC           ************************/
 
-    enum e_WindStrenght
+    public enum e_WindStrenght
     {
         eNull = 0,
         eLow,
         eMedium,
         eHigh,
+        eMax
+    }
+
+    public enum e_City
+    {
+        eRelief = 0,
+        eField,
+        eCity,
         eMax
     }
 
@@ -65,6 +78,14 @@ public class City : MonoBehaviour
         }
     }
 
+    public e_City A_kind
+    {
+        get
+        {
+            return m_kind;
+        }
+    }
+
     /********  PROTECTED        ************************/
 
     /********  PRIVATE          ************************/
@@ -89,8 +110,14 @@ public class City : MonoBehaviour
     public void Start()
     {
         updateWindStrength();
-        m_closeViewCamera = GetComponentInChildren<Camera>();
-}
+//        m_closeViewCamera = GetComponentInChildren<Camera>();
+
+        // creation population
+        if (m_population == 0)
+        {
+            m_population = Random.Range(1, 11);
+        }
+    }
 
     // Update is called once per frame
     public void Update()
@@ -104,7 +131,10 @@ public class City : MonoBehaviour
         }
 
         // update population
-        m_population += Config.m_baseProductionPopulation * getSatisfactionCoeff() * Config.m_deltaTime;
+        if (m_kind == e_City.eCity)
+        {
+            m_population += Config.m_baseProductionPopulation * getSatisfactionCoeff() * Config.m_deltaTime;
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D p_other)
@@ -190,13 +220,35 @@ public class City : MonoBehaviour
         m_population -= (p_killRatio * m_population);
     }
 
+    public void becomeSomethingAwesome(e_City p_kind)
+    {
+        if (m_kind == e_City.eField)
+        {
+            m_kind = p_kind;
+            switch (p_kind)
+            {
+                case e_City.eField:
+                    break;
+                case e_City.eCity:
+                    GetComponentInChildren<SpriteRenderer>().sprite = Config.m_spriteCity;
+                    break;
+                case e_City.eRelief:
+                    GetComponentInChildren<SpriteRenderer>().sprite =
+                        (Random.Range(0, 1000) % 2 == 0) ? Config.m_spriteMountain : Config.m_spriteSea;
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
     /********  PROTECTED        ************************/
 
     /********  PRIVATE          ************************/
 
     private void updateWindStrength()
     {
-        m_windStrength = (e_WindStrenght) Random.Range(0, (int) e_WindStrenght.eMax - 1);
+        m_windStrength = (e_WindStrenght) Random.Range(0, (int) e_WindStrenght.eMax);
         m_timerWind = Random.Range(Config.m_limitTimerWind.x, Config.m_limitTimerWind.y);
     }
 

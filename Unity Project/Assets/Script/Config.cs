@@ -20,6 +20,9 @@ public class Config :
 
     public int m_timeUnit_GUI = 60;
     public int m_baseProductionPopulation_GUI = 100;
+    public Sprite m_spriteCity_GUI;
+    public Sprite m_spriteSea_GUI;
+    public Sprite m_spriteMountain_GUI;
 
     public double m_killingCoeff_GUI = 1;
 
@@ -56,6 +59,9 @@ public class Config :
     public static int m_timeUnit;
     public static int m_baseProductionPopulation;
     public static double m_deltaTime;
+    public static Sprite m_spriteCity;
+    public static Sprite m_spriteSea;
+    public static Sprite m_spriteMountain;
 
     public static double m_killingCoeff;
 
@@ -81,6 +87,10 @@ public class Config :
     // Use this for initialization
     public void Start()
     {
+        m_spriteCity = m_spriteCity_GUI;
+        m_spriteSea = m_spriteSea_GUI;
+        m_spriteMountain = m_spriteMountain_GUI;
+
         Update();
     }
 
