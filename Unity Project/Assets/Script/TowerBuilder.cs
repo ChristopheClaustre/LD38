@@ -119,6 +119,10 @@ public class TowerBuilder : MonoBehaviour
                 int l_idSprite = Random.Range(0, System.Math.Min(darkSprites.Count, lightSprites.Count));
                 newLvlR.sprite = lightSprites[l_idSprite];
 			}
+			if (Random.Range(0,2) == 0)
+			{
+				newLvlR.flipX = true;
+			}
 
             // set sorting order
             newLvlR.sortingOrder += (int) m_nextPositionBuildings[l_idPosition].z;
