@@ -199,7 +199,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1045287444959492
 GameObject:
   m_ObjectHideFlags: 1
@@ -1691,7 +1691,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1539188074132382
 GameObject:
   m_ObjectHideFlags: 1
@@ -2273,7 +2273,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1680322476591660
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -2410,7 +2410,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1719157835647516
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -2492,7 +2492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1742853509645856
 GameObject:
   m_ObjectHideFlags: 1
@@ -2560,7 +2560,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1772461689107982
 GameObject:
   m_ObjectHideFlags: 1
@@ -3360,7 +3360,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d1ce6574c12b02f4981fe6d66e21b381, type: 3}
+  m_Sprite: {fileID: 21300004, guid: d1ce6574c12b02f4981fe6d66e21b381, type: 3}
   m_Type: 1
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3715,7 +3715,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NaN
+  m_Text: 0
 --- !u!114 &114074018051669282
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3897,7 +3897,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NaN
+  m_Text: 0
 --- !u!114 &114104402478563654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4104,8 +4104,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114751269038568688}
   m_HandleRect: {fileID: 224690129618994494}
   m_Direction: 2
-  m_Value: 0.9999998
-  m_Size: 0.4669332
+  m_Value: 1
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4236,7 +4236,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Nan
+  m_Text: 1
 --- !u!114 &114140193783556684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4509,7 +4509,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d1ce6574c12b02f4981fe6d66e21b381, type: 3}
+  m_Sprite: {fileID: 21300004, guid: d1ce6574c12b02f4981fe6d66e21b381, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4590,7 +4590,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d1ce6574c12b02f4981fe6d66e21b381, type: 3}
+  m_Sprite: {fileID: 21300004, guid: d1ce6574c12b02f4981fe6d66e21b381, type: 3}
   m_Type: 1
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4684,7 +4684,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NaN
+  m_Text: 0
 --- !u!114 &114210924948138704
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4791,7 +4791,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300020, guid: 89c3fac89c4cfb14baea7eb7d5882c19, type: 3}
+  m_Sprite: {fileID: 21300022, guid: 89c3fac89c4cfb14baea7eb7d5882c19, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4831,7 +4831,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NaN
+  m_Text: 0
 --- !u!114 &114236195112063732
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4945,7 +4945,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NaN
+  m_Text: 0
 --- !u!114 &114265416475778672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5019,7 +5019,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d1ce6574c12b02f4981fe6d66e21b381, type: 3}
+  m_Sprite: {fileID: 21300004, guid: d1ce6574c12b02f4981fe6d66e21b381, type: 3}
   m_Type: 1
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -5523,7 +5523,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NaN
+  m_Text: 0
 --- !u!114 &114353924187049364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5608,7 +5608,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Nan
+  m_Text: 1
 --- !u!114 &114360936599978606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5694,7 +5694,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1390170411505776}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -5962,7 +5962,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NaN
+  m_Text: 0
 --- !u!114 &114411364789792110
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6109,7 +6109,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NaN
+  m_Text: 0
 --- !u!114 &114437999944263166
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6244,7 +6244,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NaN
+  m_Text: 0
 --- !u!114 &114473815965957044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6895,7 +6895,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NaN
+  m_Text: 0
 --- !u!114 &114542227209772002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7476,7 +7476,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300020, guid: 89c3fac89c4cfb14baea7eb7d5882c19, type: 3}
+  m_Sprite: {fileID: 21300022, guid: 89c3fac89c4cfb14baea7eb7d5882c19, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -7920,7 +7920,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Nan
+  m_Text: 1
 --- !u!114 &114711500669570772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7994,7 +7994,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NaN
+  m_Text: 0
 --- !u!114 &114715311303812244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8168,7 +8168,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NaN
+  m_Text: 0
 --- !u!114 &114735695741450642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8228,10 +8228,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'NaN
-
-
-'
+  m_Text: 10
 --- !u!114 &114746114109219370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8345,7 +8342,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NaN
+  m_Text: 0
 --- !u!114 &114757105650865988
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8465,7 +8462,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NaN
+  m_Text: 0
 --- !u!114 &114765421016240884
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8552,7 +8549,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NaN
+  m_Text: 0
 --- !u!114 &114777078361069818
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8726,7 +8723,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NaN
+  m_Text: 0
 --- !u!114 &114801403499770932
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8966,7 +8963,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NaN
+  m_Text: 0
 --- !u!114 &114834886208463854
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9026,7 +9023,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NaN
+  m_Text: 0
 --- !u!114 &114838601340849760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9359,7 +9356,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NaN
+  m_Text: 0
 --- !u!114 &114915442536191836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9512,7 +9509,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NaN
+  m_Text: 0
 --- !u!114 &114942962197894452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9605,7 +9602,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Nan
+  m_Text: 1
 --- !u!114 &114951334821893492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9963,7 +9960,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Nan
+  m_Text: 10
 --- !u!222 &222011850114801252
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -11668,17 +11665,17 @@ RectTransform:
   m_GameObject: {fileID: 1719157835647516}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.99942297, y: 0.99942297, z: 0.99942195}
+  m_LocalScale: {x: 0.999423, y: 0.999423, z: 0.999422}
   m_Children:
   - {fileID: 224490301270555730}
   - {fileID: 224166687270730984}
-  m_Father: {fileID: 224140184275006596}
-  m_RootOrder: 0
+  m_Father: {fileID: 224478186003525448}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50.6, y: 187.3}
-  m_SizeDelta: {x: -359.5, y: -429.3}
+  m_AnchoredPosition: {x: -316.09702, y: -40.75}
+  m_SizeDelta: {x: 121.80701, y: 19.100037}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224137721492447984
 RectTransform:
@@ -11708,11 +11705,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 224135194422002398}
   - {fileID: 224524217558742126}
   - {fileID: 224255712681323526}
   - {fileID: 224490244192748940}
-  - {fileID: 224236269195981702}
   m_Father: {fileID: 224478186003525448}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12021,18 +12016,18 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1680322476591660}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224406555040054486}
-  m_Father: {fileID: 224140184275006596}
-  m_RootOrder: 4
+  m_Father: {fileID: 224478186003525448}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 184.8, y: -193.3}
-  m_SizeDelta: {x: 113.4, y: 30}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -68.84711, y: -418.3}
+  m_SizeDelta: {x: 113.400024, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224239173746520170
 RectTransform:
@@ -12173,7 +12168,7 @@ RectTransform:
   - {fileID: 224484006749263074}
   - {fileID: 224409646054847444}
   m_Father: {fileID: 224140184275006596}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -12927,6 +12922,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 224140184275006596}
+  - {fileID: 224236269195981702}
+  - {fileID: 224135194422002398}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12968,7 +12965,7 @@ RectTransform:
   m_Children:
   - {fileID: 224970978104472286}
   m_Father: {fileID: 224140184275006596}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -13234,7 +13231,7 @@ RectTransform:
   - {fileID: 224535509658165006}
   - {fileID: 224453698380744448}
   m_Father: {fileID: 224140184275006596}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -13815,10 +13812,10 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -10, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 20, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224700468252007416
 RectTransform:
   m_ObjectHideFlags: 1
@@ -13980,9 +13977,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -17, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224734088180172836
 RectTransform:
