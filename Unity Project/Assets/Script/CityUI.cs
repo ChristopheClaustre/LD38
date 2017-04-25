@@ -289,9 +289,9 @@ public class CityUI :
                  m_coalGo.transform.Find("fleche_prod").GetComponent<Image>().sprite = m_iconArrowDownSprite;
 
             if(l_coalConso >= 0)
-                m_coalGo.transform.Find("Panel").transform.Find("Signe").GetComponent<Image>().sprite = m_iconPlusSprite;
-            else
                 m_coalGo.transform.Find("Panel").transform.Find("Signe").GetComponent<Image>().sprite = m_iconMinusSprite;
+            else
+                m_coalGo.transform.Find("Panel").transform.Find("Signe").GetComponent<Image>().sprite = m_iconPlusSprite;
             m_lastConsoCoal = l_coalConso;
             
 
@@ -304,9 +304,9 @@ public class CityUI :
                 m_waterGo.transform.Find("fleche_prod").GetComponent<Image>().sprite = m_iconArrowDownSprite;
 
             if (l_waterConso >= 0)
-                m_waterGo.transform.Find("Panel").transform.Find("Signe").GetComponent<Image>().sprite = m_iconPlusSprite;
-            else
                 m_waterGo.transform.Find("Panel").transform.Find("Signe").GetComponent<Image>().sprite = m_iconMinusSprite;
+            else
+                m_waterGo.transform.Find("Panel").transform.Find("Signe").GetComponent<Image>().sprite = m_iconPlusSprite;
             m_lastConsoWater = l_waterConso;
 
             //Update Moner production
