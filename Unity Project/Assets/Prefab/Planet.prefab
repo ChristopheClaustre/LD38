@@ -279,9 +279,9 @@ MonoBehaviour:
   m_timeUnit_GUI: 60
   m_baseProductionPopulation_GUI: 400
   m_habitantsPerConstruction_GUI: 20
-  m_consumptionWaterPerHabitant_GUI: 0.1
+  m_consumptionWaterPerHabitant_GUI: 0.2
   m_productionMoneyPerHabitant_GUI: 0.1
-  m_consumptionEnergyPerHabitant_GUI: 0.1
+  m_consumptionEnergyPerHabitant_GUI: 0.3
   m_spriteCity_GUI: {fileID: 21300000, guid: 6edc494180904fa4aacad5cdb60909e6, type: 3}
   m_spriteSea_GUI: {fileID: 21300000, guid: efdc18da2a214794c8e9f2a32d476848, type: 3}
   m_spriteMountain_GUI: {fileID: 21300000, guid: 0713900b809471b4b8465144d06d2f3e,
