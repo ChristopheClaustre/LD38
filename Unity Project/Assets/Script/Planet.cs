@@ -237,14 +237,14 @@ public class Planet : MonoBehaviour
 
     private void updateEnergy(double p_deltaTime)
     {
-        double l_consumption = 0;
+        double l_production = 0;
 
         foreach (City l_City in m_cities)
         {
-            l_consumption += l_City.getEnergyProduction();
+            l_production += l_City.getEnergyProduction();
         }
 
-        m_energy -= l_consumption * p_deltaTime;
+        m_energy += l_production * p_deltaTime;
     }
 
     private void updatePollution(double p_deltaTime)
