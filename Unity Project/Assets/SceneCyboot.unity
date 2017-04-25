@@ -527,7 +527,7 @@ Prefab:
     - target: {fileID: 224690129618994494, guid: 6d814ccf42373f54d87fcc5ecb48d470,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0.53306663
+      value: 0.53306675
       objectReference: {fileID: 0}
     - target: {fileID: 224690129618994494, guid: 6d814ccf42373f54d87fcc5ecb48d470,
         type: 2}
@@ -2748,6 +2748,16 @@ Prefab:
         type: 2}
       propertyPath: m_tileNumber
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114877132041642928, guid: 3eb39379b112c9d49b9a46ad81b5b757,
+        type: 2}
+      propertyPath: m_baseProductionPopulation_GUI
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114877132041642928, guid: 3eb39379b112c9d49b9a46ad81b5b757,
+        type: 2}
+      propertyPath: m_habitantsPerConstruction_GUI
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3eb39379b112c9d49b9a46ad81b5b757, type: 2}

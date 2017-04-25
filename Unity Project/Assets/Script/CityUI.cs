@@ -3,6 +3,7 @@
  ***************************************************/
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using System;
 
@@ -57,7 +58,8 @@ public class CityUI :
     public Sprite m_iconArrowDownSprite;
     public Sprite m_iconPlusSprite;
     public Sprite m_iconMinusSprite;
-    
+    public Sprite m_iconLockSprite;
+
 
     /********  PROTECTED        ************************/
 
@@ -115,6 +117,9 @@ public class CityUI :
     private double m_lastConsoMoney;
     private double m_lastConsoEnergy;
     private double m_lastConsoPollution;
+
+    private List<GameObject> m_buildings_panel = new List<GameObject>();
+    private List<Building> m_buildings_list;
 
     /***************************************************
 	 ***  METHODS               ************************
@@ -255,12 +260,23 @@ public class CityUI :
         m_lastConsoMoney = 0;
         m_lastConsoEnergy = 0;
         m_lastConsoPollution = 0;
+
+        m_buildings_panel.Add(m_zone0Panel);
+        m_buildings_panel.Add(m_zone1Panel);
+        m_buildings_panel.Add(m_zone2Panel);
+        m_buildings_panel.Add(m_zone3Panel);
+        
     }
 
     private void updateUI()
     {
+        
         if (m_cityGO != null)
         {
+            m_buildings_list = m_cityGO.GetComponentInChildren<City>().A_buildings;
+            //**********************************
+            //UPDATE PRODUCTION
+            //**********************************
             // update UI
             m_populationText.GetComponent<Text>().text = "" + Math.Floor(m_cityGO.GetComponentInChildren<City>().A_population);
 
@@ -334,6 +350,73 @@ public class CityUI :
             else
                 m_pollutionGo.transform.Find("Panel").transform.Find("Signe").GetComponent<Image>().sprite = m_iconMinusSprite;
             m_lastConsoPollution = l_pollutionConso;
+
+
+            //**********************************
+            //UPDATE BUILDINGS
+            //**********************************
+            
+            for (int i = 0; i < m_buildings_list.Count; i++)
+            {
+                //Update coal
+                if (m_buildings_list[i].A_production[(int)Building.Ressource.eCoal].m_change)
+                {
+                    m_buildings_panel[i].transform.Find("Coal").GetComponent<Text>().text = "-";
+                }
+                else
+                {
+                    m_buildings_panel[i].transform.Find("Coal").GetComponent<Text>().text = "" + m_buildings_list[i].A_production[(int)Building.Ressource.eCoal].m_value;
+                }
+                //Update water
+                if (m_buildings_list[i].A_production[(int)Building.Ressource.eWater].m_change)
+                {
+                    m_buildings_panel[i].transform.Find("Water").GetComponent<Text>().text = "-";
+                }
+                else
+                {
+                    m_buildings_panel[i].transform.Find("Water").GetComponent<Text>().text = "" + m_buildings_list[i].A_production[(int)Building.Ressource.eWater].m_value;
+                }
+
+                if (m_buildings_list[i].A_production[(int)Building.Ressource.eMoney].m_change)
+                {
+                    m_buildings_panel[i].transform.Find("Money").GetComponent<Text>().text = "-";
+                }
+                else
+                {
+                    m_buildings_panel[i].transform.Find("Money").GetComponent<Text>().text = "" + m_buildings_list[i].A_production[(int)Building.Ressource.eMoney].m_value;
+                }
+
+                if (m_buildings_list[i].A_production[(int)Building.Ressource.eEnergy].m_change)
+                {
+                    m_buildings_panel[i].transform.Find("Energy").GetComponent<Text>().text = "-";
+                }
+                else
+                {
+                    m_buildings_panel[i].transform.Find("Energy").GetComponent<Text>().text = "" + m_buildings_list[i].A_production[(int)Building.Ressource.eEnergy].m_value;
+                }
+
+                if (m_buildings_list[i].A_production[(int)Building.Ressource.ePollution].m_change)
+                {
+                    m_buildings_panel[i].transform.Find("Pollution").GetComponent<Text>().text = "-";
+                }
+                else
+                {
+                    m_buildings_panel[i].transform.Find("Pollution").GetComponent<Text>().text = "" + m_buildings_list[i].A_production[(int)Building.Ressource.ePollution].m_value;
+                }
+                
+                if (!m_buildings_list[i].gameObject.GetComponent<SpriteRenderer>().enabled)
+                {
+                    m_buildings_list[i].gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                    m_buildings_panel[i].transform.parent.transform.Find("zone").GetComponent<Image>().sprite = m_buildings_list[i].gameObject.GetComponent<SpriteRenderer>().sprite;
+                    m_buildings_list[i].gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                }
+                else
+                {
+                    m_buildings_panel[i].transform.parent.transform.Find("zone").GetComponent<Image>().sprite = m_buildings_list[i].gameObject.GetComponent<SpriteRenderer>().sprite;
+                }
+                
+            }
+
         }
     }
     

@@ -3604,7 +3604,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1937422797
+  randomSeed: -2053419418
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3748,10 +3748,10 @@ ParticleSystem:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minColor: {r: 1, g: 1, b: 1, a: 0.266}
-      maxColor: {r: 0, g: 0.6911765, b: 0.66257596, a: 0.266}
+      maxColor: {r: 0, g: 0.6911765, b: 0.66257596, a: 1}
     startSize:
       minMaxState: 0
-      scalar: 0.005
+      scalar: 0.01
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -6560,7 +6560,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -961320036
+  randomSeed: 1959312399
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -12472,7 +12472,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1266478666
+  randomSeed: 85426863
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -15608,8 +15608,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 332947589
-  m_SortingLayer: 2
+  m_SortingLayerID: -1302412881
+  m_SortingLayer: 3
   m_SortingOrder: 5
   m_RenderMode: 0
   m_SortMode: 3
