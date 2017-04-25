@@ -4,7 +4,6 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using System;
 using UnityEngine.UI;
 
 /***************************************************
@@ -105,6 +104,9 @@ public class Planet : MonoBehaviour
     private bool m_tooMuchPollution = false;
     private double m_extraPollution;
 
+    // creation city
+    private int m_createCityTentativeNumber = 0;
+
     /***************************************************
 	 ***  METHODS               ************************
 	 ***************************************************/
@@ -129,6 +131,13 @@ public class Planet : MonoBehaviour
         // update ressources and UI
         updateRessources();
 
+        // more population
+        if (getPopulation() / 300 > m_createCityTentativeNumber)
+        {
+            m_cities[Random.Range(0, m_cities.Count)].becomeSomethingAwesome(City.KindCity.eCity);
+            m_createCityTentativeNumber++;
+        }
+
         // victory ?
         if (getPopulation() <= 0)
         {
@@ -144,7 +153,7 @@ public class Planet : MonoBehaviour
             l_population += l_City.A_population;
         }
 
-        return (int) Math.Floor(l_population);
+        return (int) System.Math.Floor(l_population);
     }
 
     public void buySomething(int p_cost)
@@ -173,12 +182,12 @@ public class Planet : MonoBehaviour
         m_time += Config.m_deltaTime;
 
         // update UI;
-        m_coalText.GetComponent<Text>().text = "" + Math.Floor(m_coal);
-        m_waterText.GetComponent<Text>().text = "" + Math.Floor(m_water);
-        m_moneyText.GetComponent<Text>().text = "" + Math.Floor(m_money);
-        m_energyText.GetComponent<Text>().text = "" + Math.Floor(m_energy);
-        m_pollutionText.GetComponent<Text>().text = "" + Math.Floor(m_pollution);
-        m_timeText.GetComponent<Text>().text = "" + Math.Floor(m_time);
+        m_coalText.GetComponent<Text>().text = "" + System.Math.Floor(m_coal);
+        m_waterText.GetComponent<Text>().text = "" + System.Math.Floor(m_water);
+        m_moneyText.GetComponent<Text>().text = "" + System.Math.Floor(m_money);
+        m_energyText.GetComponent<Text>().text = "" + System.Math.Floor(m_energy);
+        m_pollutionText.GetComponent<Text>().text = "" + System.Math.Floor(m_pollution);
+        m_timeText.GetComponent<Text>().text = "" + System.Math.Floor(m_time);
     }
 
     private void victory()
@@ -195,7 +204,7 @@ public class Planet : MonoBehaviour
         }
 
         m_coal -= l_consumption * p_deltaTime;
-        m_coal = Math.Max(0, m_coal);
+        m_coal = System.Math.Max(0, m_coal);
     }
 
     private void updateWater(double p_deltaTime)
@@ -210,7 +219,7 @@ public class Planet : MonoBehaviour
 
         if (m_notEnoughWater = m_water < 0)
         {
-            m_waterNeeded = Math.Abs(m_water);
+            m_waterNeeded = System.Math.Abs(m_water);
             m_water = 0;
         }
     }
@@ -254,6 +263,6 @@ public class Planet : MonoBehaviour
             m_pollution = 100;
         }
 
-        m_pollution = Math.Max(0, Math.Min(m_pollution, 100));
+        m_pollution = System.Math.Max(0, System.Math.Min(m_pollution, 100));
     }
 }

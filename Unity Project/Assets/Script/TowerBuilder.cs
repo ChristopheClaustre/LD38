@@ -84,7 +84,7 @@ public class TowerBuilder : MonoBehaviour
             l_vector.y = -7 + Mathf.RoundToInt(Random.Range(-1.0f, 1.0f));
             l_vector *= m_arcPixelPerUnit;
             // light or dark & sorting order
-            l_vector.z = Mathf.RoundToInt(Random.value);
+            l_vector.z = i % 2;
             // existing buildings
             l_vector.w = 0;
 
