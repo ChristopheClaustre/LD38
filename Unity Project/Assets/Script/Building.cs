@@ -18,6 +18,8 @@ public class Building :
 
     /********  PUBLIC           ************************/
 
+    public bool m_canBeDestroy = false;
+    
     /********  PROTECTED        ************************/
 
     /********  PRIVATE          ************************/
@@ -34,6 +36,8 @@ public class Building :
     private Production m_energy;
     [SerializeField]
     private List<Upgrades> m_coeffUpgrades = new List<Upgrades>();
+    [SerializeField]
+    private int m_costPerLevel;
 
     /***************************************************
 	 ***  SUB-CLASSES           ************************
@@ -58,7 +62,8 @@ public class Building :
     [System.Serializable]
     public class Upgrades
     {
-        public Upgrade[] collection;
+        public int m_cost;
+        public Upgrade[] m_upgrades;
     }
 
     public enum Ressource
@@ -74,6 +79,7 @@ public class Building :
 
     /********  PRIVATE          ************************/
 
+    private int m_level = 1;
 
     /***************************************************
 	 ***  ATTRIBUTES            ************************
@@ -125,6 +131,14 @@ public class Building :
         m_production.Add(m_water);
         m_production.Add(m_money);
         m_production.Add(m_energy);
+
+        m_level = 1;
+    }
+
+    // This function is called when the object becomes disabled.
+    private void OnDisable()
+    {
+        OnEnable();
     }
 
     // Update is called once per frame
@@ -133,9 +147,9 @@ public class Building :
         
     }
 
-    public void doUpgrade(Upgrade[] l_upgrade)
+    public void doUpgrade(Upgrades l_upgrade)
     {
-        foreach(var l_up in l_upgrade)
+        foreach(var l_up in l_upgrade.m_upgrades)
         {
             Production l_prod = m_production[(int) l_up.m_ressource];
 
@@ -151,6 +165,18 @@ public class Building :
 
             m_production[(int) l_up.m_ressource] = l_prod;
         }
+
+        m_level ++;
+    }
+
+    public int getUpgradeCost()
+    {
+        return m_costPerLevel * m_level;
+    }
+
+    public int getDestructionCost()
+    {
+        return Mathf.RoundToInt(getUpgradeCost() * 1.5f);
     }
 
     /********  PROTECTED        ************************/
