@@ -188,48 +188,64 @@ public class City : MonoBehaviour
     
     public double getCoalConsumption()
     {
-        return 1; /// CHANGER MOI, CHANGER MOI, CHANGER MOI
+        double l_production = 0;
+
+        foreach (var l_build in m_buildingsDebug)
+        {
+            l_production += l_build.A_production[(int)Building.Ressource.eCoal].m_value;
+        }
+
+        return l_production;
     }
 
     public double getWaterConsumption()
     {
-        return m_population * Config.m_consumptionWaterPerHabitant;
+        double l_production = 0;
+
+        foreach (var l_build in m_buildingsDebug)
+        {
+            l_production += l_build.A_production[(int)Building.Ressource.eWater].m_value;
+        }
+
+        return m_population * Config.m_consumptionWaterPerHabitant + l_production;
     }
 
     public double getMoneyProduction()
     {
-        return m_population * Config.m_productionMoneyPerHabitant;
+        double l_production = 0;
+
+        foreach (var l_build in m_buildingsDebug)
+        {
+            l_production += l_build.A_production[(int)Building.Ressource.eMoney].m_value;
+        }
+
+        return m_population * Config.m_productionMoneyPerHabitant + l_production;
     }
 
     public double getEnergyProduction()
     {
+        double l_production = 0;
+
+        foreach (var l_build in m_buildingsDebug)
+        {
+            l_production += l_build.A_production[(int)Building.Ressource.eEnergy].m_value;
+        }
+
         double l_consumption = m_population * Config.m_consumptionEnergyPerHabitant;
-        double l_production = 0.5; /// CHANGER MOI, CHANGER MOI, CHANGER MOI
+
         return l_production - l_consumption;
     }
 
     public double getPollutionProduction()
     {
-        double l_prod;
-        switch (m_kind)
+        double l_production = 0;
+
+        foreach (var l_build in m_buildingsDebug)
         {
-            case KindCity.eMountain:
-                l_prod = -10;
-                break;
-            case KindCity.eSea:
-                l_prod = -10;
-                break;
-            case KindCity.ePrairie:
-                l_prod = -10;
-                break;
-            case KindCity.eCity:
-                l_prod = 70; /// CHANGER MOI, CHANGER MOI, CHANGER MOI
-                break;
-            default:
-                l_prod = 0;
-                break;
+            l_production += l_build.A_production[(int) Building.Ressource.ePollution].m_value;
         }
-        return l_prod;
+
+        return l_production;
     }
 
     public double getSatisfactionCoeff()

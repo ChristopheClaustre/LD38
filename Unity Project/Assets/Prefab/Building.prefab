@@ -252,6 +252,7 @@ MonoBehaviour:
     m_change: 1
     m_value: 10
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114416768130283768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -279,6 +280,7 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114457367149885058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -306,6 +308,7 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114700389647444928
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -318,8 +321,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_pollution:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: -3
   m_coal:
     m_change: 0
     m_value: 0
@@ -333,6 +336,7 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114772150552142176
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -360,6 +364,7 @@ MonoBehaviour:
     m_change: 0
     m_value: 100
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114976191971071238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -387,6 +392,7 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_coeffUpgrades: []
+  m_production: []
 --- !u!212 &212068804503973438
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -359,45 +359,45 @@ public class CityUI :
             for (int i = 0; i < m_buildings_list.Count; i++)
             {
                 //Update coal
-                if (m_buildings_list[i].A_production[(int)Building.Ressource.eCoal].m_change)
+                if (!m_buildings_list[i].A_production[(int)Building.Ressource.eCoal].m_change)
                 {
-                    m_buildings_panel[i].transform.Find("Coal").GetComponent<Text>().text = "-";
+                    m_buildings_panel[i].transform.Find("Coal").GetComponent<Text>().text = " --";
                 }
                 else
                 {
                     m_buildings_panel[i].transform.Find("Coal").GetComponent<Text>().text = "" + m_buildings_list[i].A_production[(int)Building.Ressource.eCoal].m_value;
                 }
                 //Update water
-                if (m_buildings_list[i].A_production[(int)Building.Ressource.eWater].m_change)
+                if (!m_buildings_list[i].A_production[(int)Building.Ressource.eWater].m_change)
                 {
-                    m_buildings_panel[i].transform.Find("Water").GetComponent<Text>().text = "-";
+                    m_buildings_panel[i].transform.Find("Water").GetComponent<Text>().text = " --";
                 }
                 else
                 {
                     m_buildings_panel[i].transform.Find("Water").GetComponent<Text>().text = "" + m_buildings_list[i].A_production[(int)Building.Ressource.eWater].m_value;
                 }
 
-                if (m_buildings_list[i].A_production[(int)Building.Ressource.eMoney].m_change)
+                if (!m_buildings_list[i].A_production[(int)Building.Ressource.eMoney].m_change)
                 {
-                    m_buildings_panel[i].transform.Find("Money").GetComponent<Text>().text = "-";
+                    m_buildings_panel[i].transform.Find("Money").GetComponent<Text>().text = " --";
                 }
                 else
                 {
                     m_buildings_panel[i].transform.Find("Money").GetComponent<Text>().text = "" + m_buildings_list[i].A_production[(int)Building.Ressource.eMoney].m_value;
                 }
 
-                if (m_buildings_list[i].A_production[(int)Building.Ressource.eEnergy].m_change)
+                if (!m_buildings_list[i].A_production[(int)Building.Ressource.eEnergy].m_change)
                 {
-                    m_buildings_panel[i].transform.Find("Energy").GetComponent<Text>().text = "-";
+                    m_buildings_panel[i].transform.Find("Energy").GetComponent<Text>().text = " --";
                 }
                 else
                 {
                     m_buildings_panel[i].transform.Find("Energy").GetComponent<Text>().text = "" + m_buildings_list[i].A_production[(int)Building.Ressource.eEnergy].m_value;
                 }
 
-                if (m_buildings_list[i].A_production[(int)Building.Ressource.ePollution].m_change)
+                if (!m_buildings_list[i].A_production[(int)Building.Ressource.ePollution].m_change)
                 {
-                    m_buildings_panel[i].transform.Find("Pollution").GetComponent<Text>().text = "-";
+                    m_buildings_panel[i].transform.Find("Pollution").GetComponent<Text>().text = " --";
                 }
                 else
                 {

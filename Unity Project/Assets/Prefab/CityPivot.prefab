@@ -630,7 +630,7 @@ Transform:
   - {fileID: 4265204080823856}
   - {fileID: 4678232361709438}
   m_Father: {fileID: 4689488698799860}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4138145340589410
 Transform:
@@ -894,7 +894,7 @@ Transform:
   - {fileID: 4815070148029324}
   - {fileID: 4492877997210330}
   m_Father: {fileID: 4689488698799860}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4689488698799860
 Transform:
@@ -906,9 +906,9 @@ Transform:
   m_LocalPosition: {x: 0, y: -0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4965241519566414}
   - {fileID: 4683165534512784}
   - {fileID: 4121678219555300}
-  - {fileID: 4965241519566414}
   - {fileID: 4435478190443870}
   - {fileID: 4175330902917960}
   m_Father: {fileID: 4204115145769424}
@@ -1035,7 +1035,7 @@ Transform:
   - {fileID: 4991874974572956}
   - {fileID: 4993917317844306}
   m_Father: {fileID: 4689488698799860}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4990940990504494
 Transform:
@@ -1231,6 +1231,7 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114060392234356578
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1243,8 +1244,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_pollution:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: -3
   m_coal:
     m_change: 0
     m_value: 0
@@ -1258,6 +1259,7 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114091753187840148
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1285,6 +1287,7 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114141525364084226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1312,6 +1315,7 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114143204542854096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1339,6 +1343,7 @@ MonoBehaviour:
     m_change: 0
     m_value: 100
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114164255101302646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1388,6 +1393,7 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114199609402585160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1415,6 +1421,7 @@ MonoBehaviour:
     m_change: 1
     m_value: 10
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114241852124779868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1442,6 +1449,7 @@ MonoBehaviour:
     m_change: 1
     m_value: 10
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114284300353272288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1469,6 +1477,7 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114329846293911040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1496,6 +1505,7 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114365949474378820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1534,6 +1544,7 @@ MonoBehaviour:
     m_change: 1
     m_value: 10
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114507253869475534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1548,9 +1559,9 @@ MonoBehaviour:
   m_name: 
   m_kind: 0
   m_buildingsGO:
+  - {fileID: 1081601141343836}
   - {fileID: 1191893393984762}
   - {fileID: 1458877997283684}
-  - {fileID: 1081601141343836}
   - {fileID: 1607111171675394}
   m_closeViewCamera: {fileID: 20492647317723250}
   m_population: 0
@@ -1581,6 +1592,7 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114610220171695572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1593,8 +1605,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_pollution:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: -3
   m_coal:
     m_change: 0
     m_value: 0
@@ -1608,6 +1620,7 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114650869408007510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1620,8 +1633,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_pollution:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: -3
   m_coal:
     m_change: 0
     m_value: 0
@@ -1635,6 +1648,7 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114679052539901110
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1662,6 +1676,7 @@ MonoBehaviour:
     m_change: 0
     m_value: 100
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114698056317752858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1689,6 +1704,7 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114709887472329356
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1716,6 +1732,7 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114738811769758968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1743,6 +1760,7 @@ MonoBehaviour:
     m_change: 1
     m_value: 10
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114753143687805038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1755,8 +1773,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_pollution:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: -3
   m_coal:
     m_change: 0
     m_value: 0
@@ -1770,6 +1788,7 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114785886058323618
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1797,6 +1816,7 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114871960264732060
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1824,6 +1844,7 @@ MonoBehaviour:
     m_change: 0
     m_value: 100
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114894235727104752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1851,6 +1872,7 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114928668859687416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1889,6 +1911,7 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_coeffUpgrades: []
+  m_production: []
 --- !u!114 &114952784793740762
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1916,6 +1939,7 @@ MonoBehaviour:
     m_change: 0
     m_value: 100
   m_coeffUpgrades: []
+  m_production: []
 --- !u!124 &124770897830867190
 Behaviour:
   m_ObjectHideFlags: 1
