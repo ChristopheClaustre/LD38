@@ -279,6 +279,7 @@ public class City : MonoBehaviour
                     break;
                 case KindCity.eCity:
                     GetComponentInChildren<SpriteRenderer>().sprite = Config.m_spriteCity;
+                    GetComponent<Animator>().SetBool("flash", true);
                     break;
                 case KindCity.eMountain:
                     GetComponentInChildren<SpriteRenderer>().sprite = Config.m_spriteMountain;
