@@ -108,6 +108,7 @@ public class CityUI :
     private bool isReadyToDestroyZone1;
     private bool isReadyToDestroyZone2;
     private bool isReadyToDestroyZone3;
+    private int m_selectedId = -1;
 
     private const String LAST_MESSAGE_DESTROY = "SURE ?";
     private const String NORMAL_MESSAGE_DESTROY = "Destroy";
@@ -141,9 +142,10 @@ public class CityUI :
         updateUI();
     }
 
-    public void showShop()
+    public void showShop(int p_id)
     {
-        m_shopPanel.SetActive(!m_shopPanel.activeSelf);
+        m_shopPanel.SetActive(m_selectedId != p_id);
+        m_selectedId = (m_selectedId == p_id)? p_id : -1;
     }
 
     public void showZone0()
@@ -174,7 +176,6 @@ public class CityUI :
         m_zone3Panel.SetActive(!m_zone3Panel.activeSelf);
         //m_shopPanel.SetActive(false);
     }
-
 
     public void DestroyZone0()
     {
@@ -238,6 +239,11 @@ public class CityUI :
         //m_shopPanel.SetActive(false);
     }
 
+    public void changeBuilding(string p_name)
+    {
+        m_cityGO.GetComponentInChildren<City>().changeBuilding(m_selectedId, p_name);
+        showShop(m_selectedId);
+    }
 
     /********  PROTECTED        ************************/
 

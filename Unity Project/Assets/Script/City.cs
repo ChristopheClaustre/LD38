@@ -280,6 +280,8 @@ public class City : MonoBehaviour
                 case KindCity.eCity:
                     GetComponentInChildren<SpriteRenderer>().sprite = Config.m_spriteCity;
                     GetComponent<Animator>().SetBool("flash", true);
+                    changeBuilding(0, "Park");
+                    changeBuilding(1, "Park");
                     break;
                 case KindCity.eMountain:
                     GetComponentInChildren<SpriteRenderer>().sprite = Config.m_spriteMountain;
@@ -290,6 +292,14 @@ public class City : MonoBehaviour
                 default:
                     break;
             }
+        }
+    }
+
+    public void changeBuilding(int p_id, string p_name)
+    {
+        foreach (var l_build in m_buildingsGO[p_id].GetComponentsInChildren<Building>(true))
+        {
+            l_build.gameObject.gameObject.SetActive(l_build.gameObject.name == p_name);
         }
     }
 
