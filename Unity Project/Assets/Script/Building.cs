@@ -95,7 +95,7 @@ public class Building :
         }
     }
 
-    private List<Upgrades> A_coeffUpgrades
+    public List<Upgrades> A_coeffUpgrades
     {
         get
         {

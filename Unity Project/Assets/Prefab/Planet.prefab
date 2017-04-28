@@ -278,7 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_timeUnit_GUI: 60
   m_baseProductionPopulation_GUI: 400
-  m_habitantsPerConstruction_GUI: 10
+  m_habitantsPerConstruction_GUI: 100
   m_consumptionWaterPerHabitant_GUI: 0.2
   m_productionMoneyPerHabitant_GUI: 0.1
   m_consumptionEnergyPerHabitant_GUI: 0.3
@@ -291,7 +291,7 @@ MonoBehaviour:
   m_limitVelocityCoeff_GUI: {x: -0.5, y: 1}
   m_limitTTL_GUI: {x: 0.2, y: 2}
   m_limitRainedQuantity_GUI: {x: 100, y: 300}
-  m_limitBuildingsNumber_GUI: {x: 6, y: 6}
+  m_limitBuildingsNumber_GUI: {x: 6, y: 7}
   m_limitPlacementBuildings_GUI: {x: -20, y: 20}
   m_satisfactionCoeff_GUI:
   - 0.5

@@ -186,7 +186,7 @@ public class City : MonoBehaviour
         m_sunlight = m_positionCoeff * m_cloudCoeff;
     }
     
-    public double getCoalConsumption()
+    public double getCoalProduction()
     {
         double l_production = 0;
 
@@ -198,7 +198,7 @@ public class City : MonoBehaviour
         return l_production;
     }
 
-    public double getWaterConsumption()
+    public double getWaterProduction()
     {
         double l_production = 0;
 
@@ -207,7 +207,7 @@ public class City : MonoBehaviour
             l_production += l_build.A_production[(int)Building.Ressource.eWater].m_value;
         }
 
-        return m_population * Config.m_consumptionWaterPerHabitant + l_production;
+        return l_production - m_population * Config.m_consumptionWaterPerHabitant;
     }
 
     public double getMoneyProduction()
@@ -280,8 +280,8 @@ public class City : MonoBehaviour
                 case KindCity.eCity:
                     GetComponentInChildren<SpriteRenderer>().sprite = Config.m_spriteCity;
                     GetComponent<Animator>().SetBool("flash", true);
-                    changeBuilding(0, "Park");
                     changeBuilding(1, "Park");
+                    changeBuilding(2, "Park");
                     break;
                 case KindCity.eMountain:
                     GetComponentInChildren<SpriteRenderer>().sprite = Config.m_spriteMountain;

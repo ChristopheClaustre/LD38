@@ -35,15 +35,12 @@ public class CityUI :
     //UI Text Button
     [Header("Button")]
     public GameObject[] m_destroyButtons = new GameObject[4] { null, null, null, null };
+    public GameObject[] m_upgradeButtons = new GameObject[4] { null, null, null, null };
 
     //UI Panels
     [Header("Panel")]
     public GameObject m_shopPanel;
     public List<GameObject> m_buildingPanels = new List<GameObject>() { null, null, null, null };
-//    public GameObject m_zone0Panel;
-//    public GameObject m_zone1Panel;
-//    public GameObject m_zone2Panel;
-//    public GameObject m_zone3Panel;
 
     //UI Building
     [Header("ShopBuilding")]
@@ -142,7 +139,7 @@ public class CityUI :
     public void showShop(int p_id)
     {
         m_shopPanel.SetActive(m_selectedId != p_id);
-        m_selectedId = (m_selectedId == p_id)? p_id : -1;
+        m_selectedId = (m_selectedId == p_id)? -1 : p_id;
     }
 
     public void ShowZone(int p_id)
@@ -155,27 +152,6 @@ public class CityUI :
             showShop(p_id);
         }
     }
-/*
-    public void showZone1()
-    {
-        m_destroyZone1Text.GetComponent<Text>().text = NORMAL_MESSAGE_DESTROY;
-        m_zone1Panel.SetActive(!m_zone1Panel.activeSelf);
-        //m_shopPanel.SetActive(false);
-    }
-
-    public void showZone2()
-    {
-        m_destroyZone2Text.GetComponent<Text>().text = NORMAL_MESSAGE_DESTROY;
-        m_zone2Panel.SetActive(!m_zone2Panel.activeSelf);
-        //m_shopPanel.SetActive(false);
-    }
-
-    public void showZone3()
-    {
-        m_destroyZone3Text.GetComponent<Text>().text = NORMAL_MESSAGE_DESTROY;
-        m_zone3Panel.SetActive(!m_zone3Panel.activeSelf);
-        //m_shopPanel.SetActive(false);
-    }*/
 
     public void DestroyZone(int p_id)
     {
@@ -241,78 +217,28 @@ public class CityUI :
             m_cityNameText.GetComponent<Text>().text = m_cityGO.GetComponentInChildren<City>().m_name;
 
             //Update Coal comsumption
-            double l_coalConso = Math.Floor(m_cityGO.GetComponentInChildren<City>().getCoalConsumption());
+            double l_coalConso = Math.Floor(m_cityGO.GetComponentInChildren<City>().getCoalProduction());
             updateRessource(l_coalConso, m_lastConsoCoal, m_coalGo);
-            //m_coalGo.GetComponentInChildren<Text>().text = "" + Math.Abs(l_coalConso);
-            //if (l_coalConso >= m_lastConsoCoal)
-            //    m_coalGo.transform.Find("fleche_prod").GetComponent<Image>().sprite = m_iconArrowUpSprite;
-            //else
-            //     m_coalGo.transform.Find("fleche_prod").GetComponent<Image>().sprite = m_iconArrowDownSprite;
-
-            //if(l_coalConso >= 0)
-            //    m_coalGo.transform.Find("Panel").transform.Find("Signe").GetComponent<Image>().sprite = m_iconMinusSprite;
-            //else
-            //    m_coalGo.transform.Find("Panel").transform.Find("Signe").GetComponent<Image>().sprite = m_iconPlusSprite;
             m_lastConsoCoal = l_coalConso;
 
             //Update Water comsumption
-            double l_waterConso = Math.Floor(m_cityGO.GetComponentInChildren<City>().getWaterConsumption());
+            double l_waterConso = Math.Floor(m_cityGO.GetComponentInChildren<City>().getWaterProduction());
             updateRessource(l_waterConso, m_lastConsoWater, m_waterGo);
-            //m_waterGo.GetComponentInChildren<Text>().text = "" + Math.Abs(l_waterConso);
-            //if (l_waterConso >= m_lastConsoWater)
-            //    m_waterGo.transform.Find("fleche_prod").GetComponent<Image>().sprite = m_iconArrowUpSprite;
-            //else
-            //    m_waterGo.transform.Find("fleche_prod").GetComponent<Image>().sprite = m_iconArrowDownSprite;
-
-            //if (l_waterConso >= 0)
-            //    m_waterGo.transform.Find("Panel").transform.Find("Signe").GetComponent<Image>().sprite = m_iconMinusSprite;
-            //else
-            //    m_waterGo.transform.Find("Panel").transform.Find("Signe").GetComponent<Image>().sprite = m_iconPlusSprite;
             m_lastConsoWater = l_waterConso;
 
             //Update Money production
             double l_moneyConso = Math.Floor(m_cityGO.GetComponentInChildren<City>().getMoneyProduction());
             updateRessource(l_moneyConso, m_lastConsoMoney, m_moneyGo);
-            //m_moneyGo.GetComponentInChildren<Text>().text = "" + Math.Abs(l_moneyConso);
-            //if (l_moneyConso >= m_lastConsoMoney)
-            //    m_moneyGo.transform.Find("fleche_prod").GetComponent<Image>().sprite = m_iconArrowUpSprite;
-            //else
-            //    m_moneyGo.transform.Find("fleche_prod").GetComponent<Image>().sprite = m_iconArrowDownSprite;
-
-            //if (l_moneyConso >= 0)
-            //    m_moneyGo.transform.Find("Panel").transform.Find("Signe").GetComponent<Image>().sprite = m_iconPlusSprite;
-            //else
-            //    m_moneyGo.transform.Find("Panel").transform.Find("Signe").GetComponent<Image>().sprite = m_iconMinusSprite;
             m_lastConsoMoney = l_moneyConso;
 
             //Update Energie production
             double l_energyConso = Math.Floor(m_cityGO.GetComponentInChildren<City>().getEnergyProduction());
             updateRessource(l_energyConso, m_lastConsoEnergy, m_energyGo);
-            //m_energyGo.GetComponentInChildren<Text>().text = "" + Math.Abs(l_energyConso);
-            //if (l_energyConso >= m_lastConsoEnergy)
-            //    m_energyGo.transform.Find("fleche_prod").GetComponent<Image>().sprite = m_iconArrowUpSprite;
-            //else
-            //    m_energyGo.transform.Find("fleche_prod").GetComponent<Image>().sprite = m_iconArrowDownSprite;
-
-            //if (l_energyConso >= 0)
-            //    m_energyGo.transform.Find("Panel").transform.Find("Signe").GetComponent<Image>().sprite = m_iconPlusSprite;
-            //else
-            //    m_energyGo.transform.Find("Panel").transform.Find("Signe").GetComponent<Image>().sprite = m_iconMinusSprite;
             m_lastConsoEnergy = l_energyConso;
 
             //Update Pollution production
             double l_pollutionConso = Math.Floor(m_cityGO.GetComponentInChildren<City>().getPollutionProduction());
             updateRessource(l_pollutionConso, m_lastConsoPollution, m_pollutionGo);
-            //m_pollutionGo.GetComponentInChildren<Text>().text = "" + Math.Abs(l_pollutionConso);
-            //if (l_pollutionConso >= m_lastConsoPollution)
-            //    m_pollutionGo.transform.Find("fleche_prod").GetComponent<Image>().sprite = m_iconArrowUpSprite;
-            //else
-            //    m_pollutionGo.transform.Find("fleche_prod").GetComponent<Image>().sprite = m_iconArrowDownSprite;
-
-            //if (l_pollutionConso >= 0)
-            //    m_pollutionGo.transform.Find("Panel").transform.Find("Signe").GetComponent<Image>().sprite = m_iconPlusSprite;
-            //else
-            //    m_pollutionGo.transform.Find("Panel").transform.Find("Signe").GetComponent<Image>().sprite = m_iconMinusSprite;
             m_lastConsoPollution = l_pollutionConso;
 
 
@@ -320,10 +246,13 @@ public class CityUI :
             //UPDATE BUILDINGS
             //**********************************
             
-            for (int i = 0; i < m_buildings_list.Count; i++)
+            for (int i = 0; i < m_buildings_list.Count; ++i)
             {
                 //Destroy button interactibility
                 m_destroyButtons[i].GetComponent<Button>().interactable = m_buildings_list[i].m_canBeDestroy;
+
+                //Upgrade button interactibility
+                m_upgradeButtons[i].GetComponent<Button>().interactable = m_buildings_list[i].A_coeffUpgrades.Count > 0;
 
                 //Update coal
                 if (!m_buildings_list[i].A_production[(int)Building.Ressource.eCoal].m_change)

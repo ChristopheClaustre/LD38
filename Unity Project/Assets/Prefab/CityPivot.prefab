@@ -861,7 +861,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1571028086891410}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.12, y: -0.00999999, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4683165534512784}
@@ -1050,7 +1050,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1663251212903426}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.32, y: -0.00999999, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4121678219555300}
@@ -1214,7 +1214,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1592037193152778}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.44, y: 0.000000011175871, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4435478190443870}
@@ -1408,11 +1408,11 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_water:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: 20
   m_money:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: -10
   m_energy:
     m_change: 0
     m_value: 0
@@ -1433,7 +1433,7 @@ MonoBehaviour:
   m_canBeDestroy: 0
   m_pollution:
     m_change: 1
-    m_value: -3
+    m_value: -5
   m_coal:
     m_change: 0
     m_value: 0
@@ -1468,11 +1468,11 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_water:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: 20
   m_money:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: -10
   m_energy:
     m_change: 0
     m_value: 0
@@ -1501,11 +1501,11 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_money:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: 1
   m_energy:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: 5
   m_coeffUpgrades: []
   m_costPerLevel: 0
   m_production: []
@@ -1531,11 +1531,11 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_money:
-    m_change: 0
-    m_value: 5
+    m_change: 1
+    m_value: -1
   m_energy:
-    m_change: 0
-    m_value: 100
+    m_change: 1
+    m_value: 5
   m_coeffUpgrades: []
   m_costPerLevel: 0
   m_production: []
@@ -1583,11 +1583,11 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_money:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: 1
   m_energy:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: 5
   m_coeffUpgrades: []
   m_costPerLevel: 0
   m_production: []
@@ -1604,20 +1604,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_canBeDestroy: 1
   m_pollution:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: 10
   m_coal:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: -20
   m_water:
     m_change: 0
     m_value: 0
   m_money:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: 5
   m_energy:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: 20
   m_coeffUpgrades: []
   m_costPerLevel: 0
   m_production: []
@@ -1634,8 +1634,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_canBeDestroy: 1
   m_pollution:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: -1
   m_coal:
     m_change: 0
     m_value: 0
@@ -1647,9 +1647,9 @@ MonoBehaviour:
     m_value: -10
   m_energy:
     m_change: 1
-    m_value: 10
+    m_value: 30
   m_coeffUpgrades: []
-  m_costPerLevel: 0
+  m_costPerLevel: 3000
   m_production: []
 --- !u!114 &114241852124779868
 MonoBehaviour:
@@ -1664,8 +1664,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_canBeDestroy: 1
   m_pollution:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: -1
   m_coal:
     m_change: 0
     m_value: 0
@@ -1677,9 +1677,9 @@ MonoBehaviour:
     m_value: -10
   m_energy:
     m_change: 1
-    m_value: 10
+    m_value: 30
   m_coeffUpgrades: []
-  m_costPerLevel: 0
+  m_costPerLevel: 3000
   m_production: []
 --- !u!114 &114284300353272288
 MonoBehaviour:
@@ -1695,7 +1695,7 @@ MonoBehaviour:
   m_canBeDestroy: 0
   m_pollution:
     m_change: 1
-    m_value: -5
+    m_value: -3
   m_coal:
     m_change: 0
     m_value: 0
@@ -1708,7 +1708,9 @@ MonoBehaviour:
   m_energy:
     m_change: 0
     m_value: 0
-  m_coeffUpgrades: []
+  m_coeffUpgrades:
+  - m_cost: 0
+    m_upgrades: []
   m_costPerLevel: 0
   m_production: []
 --- !u!114 &114329846293911040
@@ -1730,11 +1732,11 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_water:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: 20
   m_money:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: -10
   m_energy:
     m_change: 0
     m_value: 0
@@ -1765,8 +1767,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_canBeDestroy: 1
   m_pollution:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: -1
   m_coal:
     m_change: 0
     m_value: 0
@@ -1778,9 +1780,9 @@ MonoBehaviour:
     m_value: -10
   m_energy:
     m_change: 1
-    m_value: 10
+    m_value: 30
   m_coeffUpgrades: []
-  m_costPerLevel: 0
+  m_costPerLevel: 3000
   m_production: []
 --- !u!114 &114507253869475534
 MonoBehaviour:
@@ -1815,20 +1817,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_canBeDestroy: 1
   m_pollution:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: 10
   m_coal:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: -20
   m_water:
     m_change: 0
     m_value: 0
   m_money:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: 5
   m_energy:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: 20
   m_coeffUpgrades: []
   m_costPerLevel: 0
   m_production: []
@@ -1851,11 +1853,11 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_water:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: 20
   m_money:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: -10
   m_energy:
     m_change: 0
     m_value: 0
@@ -1875,20 +1877,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_canBeDestroy: 1
   m_pollution:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: 10
   m_coal:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: -20
   m_water:
     m_change: 0
     m_value: 0
   m_money:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: 5
   m_energy:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: 20
   m_coeffUpgrades: []
   m_costPerLevel: 0
   m_production: []
@@ -1906,7 +1908,7 @@ MonoBehaviour:
   m_canBeDestroy: 0
   m_pollution:
     m_change: 1
-    m_value: -3
+    m_value: -5
   m_coal:
     m_change: 0
     m_value: 0
@@ -1936,7 +1938,7 @@ MonoBehaviour:
   m_canBeDestroy: 0
   m_pollution:
     m_change: 1
-    m_value: -3
+    m_value: -5
   m_coal:
     m_change: 0
     m_value: 0
@@ -1974,11 +1976,11 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_money:
-    m_change: 0
-    m_value: 5
+    m_change: 1
+    m_value: -1
   m_energy:
-    m_change: 0
-    m_value: 100
+    m_change: 1
+    m_value: 5
   m_coeffUpgrades: []
   m_costPerLevel: 0
   m_production: []
@@ -1996,7 +1998,7 @@ MonoBehaviour:
   m_canBeDestroy: 0
   m_pollution:
     m_change: 1
-    m_value: -5
+    m_value: -3
   m_coal:
     m_change: 0
     m_value: 0
@@ -2009,7 +2011,9 @@ MonoBehaviour:
   m_energy:
     m_change: 0
     m_value: 0
-  m_coeffUpgrades: []
+  m_coeffUpgrades:
+  - m_cost: 0
+    m_upgrades: []
   m_costPerLevel: 0
   m_production: []
 --- !u!114 &114709887472329356
@@ -2026,7 +2030,7 @@ MonoBehaviour:
   m_canBeDestroy: 0
   m_pollution:
     m_change: 1
-    m_value: -5
+    m_value: -3
   m_coal:
     m_change: 0
     m_value: 0
@@ -2039,7 +2043,9 @@ MonoBehaviour:
   m_energy:
     m_change: 0
     m_value: 0
-  m_coeffUpgrades: []
+  m_coeffUpgrades:
+  - m_cost: 0
+    m_upgrades: []
   m_costPerLevel: 0
   m_production: []
 --- !u!114 &114738811769758968
@@ -2055,8 +2061,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_canBeDestroy: 1
   m_pollution:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: -1
   m_coal:
     m_change: 0
     m_value: 0
@@ -2068,9 +2074,9 @@ MonoBehaviour:
     m_value: -10
   m_energy:
     m_change: 1
-    m_value: 10
+    m_value: 30
   m_coeffUpgrades: []
-  m_costPerLevel: 0
+  m_costPerLevel: 3000
   m_production: []
 --- !u!114 &114753143687805038
 MonoBehaviour:
@@ -2086,7 +2092,7 @@ MonoBehaviour:
   m_canBeDestroy: 0
   m_pollution:
     m_change: 1
-    m_value: -3
+    m_value: -5
   m_coal:
     m_change: 0
     m_value: 0
@@ -2115,20 +2121,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_canBeDestroy: 1
   m_pollution:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: 10
   m_coal:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: -20
   m_water:
     m_change: 0
     m_value: 0
   m_money:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: 5
   m_energy:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: 20
   m_coeffUpgrades: []
   m_costPerLevel: 0
   m_production: []
@@ -2154,11 +2160,11 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_money:
-    m_change: 0
-    m_value: 5
+    m_change: 1
+    m_value: -1
   m_energy:
-    m_change: 0
-    m_value: 100
+    m_change: 1
+    m_value: 5
   m_coeffUpgrades: []
   m_costPerLevel: 0
   m_production: []
@@ -2184,11 +2190,11 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_money:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: 1
   m_energy:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: 5
   m_coeffUpgrades: []
   m_costPerLevel: 0
   m_production: []
@@ -2225,11 +2231,11 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_money:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: 1
   m_energy:
-    m_change: 0
-    m_value: 0
+    m_change: 1
+    m_value: 5
   m_coeffUpgrades: []
   m_costPerLevel: 0
   m_production: []
@@ -2247,7 +2253,7 @@ MonoBehaviour:
   m_canBeDestroy: 0
   m_pollution:
     m_change: 1
-    m_value: -5
+    m_value: -3
   m_coal:
     m_change: 0
     m_value: 0
@@ -2260,7 +2266,9 @@ MonoBehaviour:
   m_energy:
     m_change: 0
     m_value: 0
-  m_coeffUpgrades: []
+  m_coeffUpgrades:
+  - m_cost: 0
+    m_upgrades: []
   m_costPerLevel: 0
   m_production: []
 --- !u!114 &114952784793740762
@@ -2285,11 +2293,11 @@ MonoBehaviour:
     m_change: 0
     m_value: 0
   m_money:
-    m_change: 0
-    m_value: 5
+    m_change: 1
+    m_value: -1
   m_energy:
-    m_change: 0
-    m_value: 100
+    m_change: 1
+    m_value: 5
   m_coeffUpgrades: []
   m_costPerLevel: 0
   m_production: []

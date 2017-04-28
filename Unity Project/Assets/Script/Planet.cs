@@ -197,25 +197,25 @@ public class Planet : MonoBehaviour
 
     private void updateCoal(double p_deltaTime)
     {
-        double l_consumption = 0;
+        double l_production = 0;
         foreach (City l_City in m_cities)
         {
-            l_consumption += l_City.getCoalConsumption();
+            l_production += l_City.getCoalProduction();
         }
 
-        m_coal -= l_consumption * p_deltaTime;
+        m_coal += l_production * p_deltaTime;
         m_coal = System.Math.Max(0, m_coal);
     }
 
     private void updateWater(double p_deltaTime)
     {
-        double l_consumption = 0;
+        double l_production = 0;
         foreach (City l_City in m_cities)
         {
-            l_consumption += l_City.getWaterConsumption();
+            l_production += l_City.getWaterProduction();
         }
 
-        m_water -= l_consumption * p_deltaTime;
+        m_water += l_production * p_deltaTime;
 
         if (m_notEnoughWater = m_water < 0)
         {
