@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: d1ce6574c12b02f4981fe6d66e21b381
-timeCreated: 1493030695
+timeCreated: 1493665922
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -109,12 +109,12 @@ TextureImporter:
       name: connection_Woods
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
+        x: 0
+        y: 0
         width: 11
         height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -122,12 +122,12 @@ TextureImporter:
       name: connection_Island
       rect:
         serializedVersion: 2
-        x: 15
-        y: 1
+        x: 14
+        y: 0
         width: 12
         height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -135,12 +135,12 @@ TextureImporter:
       name: connection_PlaceHolder
       rect:
         serializedVersion: 2
-        x: 30
-        y: 1
-        width: 16
-        height: 15
+        x: 29
+        y: 0
+        width: 11
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -148,12 +148,12 @@ TextureImporter:
       name: connection_PlaceHolder2
       rect:
         serializedVersion: 2
-        x: 47
-        y: 1
+        x: 46
+        y: 0
         width: 17
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
