@@ -24,9 +24,15 @@ public class Namer :
     /********  PRIVATE          ************************/
 
     [SerializeField]
+    private TextAsset m_cities;
+    [SerializeField]
     private string m_filenameCitiesDictionary = "cities.txt";
     [SerializeField]
+    private TextAsset m_mountains;
+    [SerializeField]
     private string m_filenameMountainsDictionary = "mountains.txt";
+    [SerializeField]
+    private TextAsset m_seas;
     [SerializeField]
     private string m_filenameSeasDictionary = "seas.txt";
 
@@ -99,21 +105,9 @@ public class Namer :
 
     private void fillDictionary()
     {
-        StreamReader l_sr = new StreamReader(Application.dataPath + "/" + m_filenameCitiesDictionary);
-        string l_cities = l_sr.ReadToEnd();
-        l_sr.Close();
-
-        l_sr = new StreamReader(Application.dataPath + "/" + m_filenameMountainsDictionary);
-        string l_mountains = l_sr.ReadToEnd();
-        l_sr.Close();
-
-        l_sr = new StreamReader(Application.dataPath + "/" + m_filenameSeasDictionary);
-        string l_seas = l_sr.ReadToEnd();
-        l_sr.Close();
-
-        fillDico(l_cities.Split('\n'), ref m_citiesDictionary);
-        fillDico(l_mountains.Split('\n'), ref m_mountainsDictionary);
-        fillDico(l_seas.Split('\n'), ref m_seasDictionary);
+        fillDico(m_cities.text.Split('\n'), ref m_citiesDictionary);
+        fillDico(m_mountains.text.Split('\n'), ref m_mountainsDictionary);
+        fillDico(m_seas.text.Split('\n'), ref m_seasDictionary);
     }
 
     private static void fillDico(string[] l_raw, ref List<string> l_out)
