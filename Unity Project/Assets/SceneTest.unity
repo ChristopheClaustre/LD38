@@ -1296,11 +1296,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_cities: {fileID: 0}
-  m_filenameCitiesDictionary: cities.txt
   m_mountains: {fileID: 0}
-  m_filenameMountainsDictionary: mountains.txt
   m_seas: {fileID: 0}
-  m_filenameSeasDictionary: seas.txt
 --- !u!1 &987851933
 GameObject:
   m_ObjectHideFlags: 0
@@ -2115,12 +2112,37 @@ Prefab:
     - target: {fileID: 224690129618994494, guid: 6d814ccf42373f54d87fcc5ecb48d470,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 0.46693334
       objectReference: {fileID: 0}
     - target: {fileID: 224419224698678428, guid: 6d814ccf42373f54d87fcc5ecb48d470,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 399.85367
+      value: 399.80002
+      objectReference: {fileID: 0}
+    - target: {fileID: 224724547490229134, guid: 6d814ccf42373f54d87fcc5ecb48d470,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224724547490229134, guid: 6d814ccf42373f54d87fcc5ecb48d470,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224724547490229134, guid: 6d814ccf42373f54d87fcc5ecb48d470,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 224406555040054486, guid: 6d814ccf42373f54d87fcc5ecb48d470,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 224406555040054486, guid: 6d814ccf42373f54d87fcc5ecb48d470,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d814ccf42373f54d87fcc5ecb48d470, type: 2}
@@ -2593,39 +2615,9 @@ Prefab:
       objectReference: {fileID: 540026736}
     - target: {fileID: 114877132041642928, guid: 3eb39379b112c9d49b9a46ad81b5b757,
         type: 2}
-      propertyPath: m_productionMoneyPerHabitant_GUI
-      value: 0.3
+      propertyPath: m_habitantsPerConstruction_GUI
+      value: 50
       objectReference: {fileID: 0}
-    - target: {fileID: 114156561857742854, guid: 3eb39379b112c9d49b9a46ad81b5b757,
-        type: 2}
-      propertyPath: cities
-      value: 
-      objectReference: {fileID: 4900000, guid: 7bc7693c7c38e4f49aabc410e3d70868, type: 3}
-    - target: {fileID: 114156561857742854, guid: 3eb39379b112c9d49b9a46ad81b5b757,
-        type: 2}
-      propertyPath: mountains
-      value: 
-      objectReference: {fileID: 4900000, guid: 4f6a4f4f4df15354f9f2693f20a4c1d6, type: 3}
-    - target: {fileID: 114156561857742854, guid: 3eb39379b112c9d49b9a46ad81b5b757,
-        type: 2}
-      propertyPath: seas
-      value: 
-      objectReference: {fileID: 4900000, guid: 28181a5e90547744da5df9ee446afd49, type: 3}
-    - target: {fileID: 114156561857742854, guid: 3eb39379b112c9d49b9a46ad81b5b757,
-        type: 2}
-      propertyPath: m_cities
-      value: 
-      objectReference: {fileID: 4900000, guid: 7bc7693c7c38e4f49aabc410e3d70868, type: 3}
-    - target: {fileID: 114156561857742854, guid: 3eb39379b112c9d49b9a46ad81b5b757,
-        type: 2}
-      propertyPath: m_mountains
-      value: 
-      objectReference: {fileID: 4900000, guid: 4f6a4f4f4df15354f9f2693f20a4c1d6, type: 3}
-    - target: {fileID: 114156561857742854, guid: 3eb39379b112c9d49b9a46ad81b5b757,
-        type: 2}
-      propertyPath: m_seas
-      value: 
-      objectReference: {fileID: 4900000, guid: 28181a5e90547744da5df9ee446afd49, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3eb39379b112c9d49b9a46ad81b5b757, type: 2}
   m_IsPrefabParent: 0

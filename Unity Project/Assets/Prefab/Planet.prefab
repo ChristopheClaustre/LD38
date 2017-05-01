@@ -278,7 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_timeUnit_GUI: 60
   m_baseProductionPopulation_GUI: 400
-  m_habitantsPerConstruction_GUI: 100
+  m_habitantsPerConstruction_GUI: 50
   m_consumptionWaterPerHabitant_GUI: 0.2
   m_productionMoneyPerHabitant_GUI: 0.3
   m_consumptionEnergyPerHabitant_GUI: 0.3
