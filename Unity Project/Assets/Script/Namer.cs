@@ -26,15 +26,9 @@ public class Namer :
     [SerializeField]
     private TextAsset m_cities;
     [SerializeField]
-    private string m_filenameCitiesDictionary = "cities.txt";
-    [SerializeField]
     private TextAsset m_mountains;
     [SerializeField]
-    private string m_filenameMountainsDictionary = "mountains.txt";
-    [SerializeField]
     private TextAsset m_seas;
-    [SerializeField]
-    private string m_filenameSeasDictionary = "seas.txt";
 
     /***************************************************
 	 ***  SUB-CLASSES           ************************
